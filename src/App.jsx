@@ -7,7 +7,7 @@ export default function App() {
         <div className="box-border">
             <Nav />
             <div className="flex justify-center">
-                <h1 className="text-[80px] mt-24 text-green-400">let us cook the mf books</h1>
+                <h1 className="text-[80px] mt-24 text-emerald-400">let us cook the mf books</h1>
             </div>
         </div>
     )

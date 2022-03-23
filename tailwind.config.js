@@ -3,7 +3,7 @@ module.exports = {
       "./src/*.{js,jsx,ts,tsx}", "./src/components/*.{js,jsx,ts,tsx}"
     ],
     theme: {
-      extend: {},
+      extend: {}
     },
     plugins: [],
   }
