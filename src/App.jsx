@@ -1,14 +1,20 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import "../public/index.css"
 import Nav from "./components/Nav.jsx"
+import Footer from "./components/Footer.jsx"
+import Home from "./pages/Home.jsx"
+import Odds from "./pages/Odds.jsx"
 
 export default function App() {
     return (
-        <div className="box-border">
+        <Router className="box-border">
             <Nav />
-            <div className="flex justify-center">
-                <h1 className="text-[80px] mt-24 text-emerald-400">let us cook the mf books</h1>
-            </div>
-        </div>
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/odds" element={<Odds />} />
+            </Routes>
+            {/* <Footer /> */}
+        </Router>
     )
 }
