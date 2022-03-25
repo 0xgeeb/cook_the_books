@@ -1,0 +1,2999 @@
+[
+   {
+      "id":"023cddfcb92684c83eb3faa012213310",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-14T23:30:00Z",
+      "home_team":"Ottawa Senators",
+      "away_team":"Arizona Coyotes",
+      "bookmakers":[
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":135
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":137
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-152
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-162
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":135
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":135
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":137
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-151
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":130
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-162
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betmgm",
+            "title":"BetMGM",
+            "last_update":"2022-03-14T16:41:31Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":125
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-155
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"pointsbetus",
+            "title":"PointsBet (US)",
+            "last_update":"2022-03-14T16:38:41Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":135
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"wynnbet",
+            "title":"WynnBET",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":130
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-149
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"gtbets",
+            "title":"GTbets",
+            "last_update":"2022-03-14T16:40:11Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"foxbet",
+            "title":"FOX Bet",
+            "last_update":"2022-03-14T16:38:03Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":125
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-161
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"mybookieag",
+            "title":"MyBookie.ag",
+            "last_update":"2022-03-14T16:42:18Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betus",
+            "title":"BetUS",
+            "last_update":"2022-03-14T16:38:05Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":135
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-155
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"intertops",
+            "title":"Intertops",
+            "last_update":"2022-03-14T16:43:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":135
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-155
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":134
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-158
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":126
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-156
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":158
+                     },
+                     {
+                        "name":"Ottawa Senators",
+                        "price":-125
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"e6f0742cbb943c8b58af9491a5eafb80",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-15T23:07:00Z",
+      "home_team":"New York Rangers",
+      "away_team":"Anaheim Ducks",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":184
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-220
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":180
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-222
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":180
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-225
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":180
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-225
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":180
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-225
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":180
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-225
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":182
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-204
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":182
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-203
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":175
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-210
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":176
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-238
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":240
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":175
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-210
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Anaheim Ducks",
+                        "price":180
+                     },
+                     {
+                        "name":"New York Rangers",
+                        "price":-220
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"6235edee4ce8f32a34d3efa9d5ec45f5",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-15T23:07:00Z",
+      "home_team":"Montréal Canadiens",
+      "away_team":"Arizona Coyotes",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":132
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-156
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":138
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":138
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":138
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":140
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":124
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-164
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":164
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-123
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Arizona Coyotes",
+                        "price":145
+                     },
+                     {
+                        "name":"Montréal Canadiens",
+                        "price":-165
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"9075dee210843bc71cbc2b3f7770e7b9",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-15T23:07:00Z",
+      "home_team":"Toronto Maple Leafs",
+      "away_team":"Dallas Stars",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":134
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-158
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":140
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":140
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-172
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":140
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":140
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":140
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":124
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-164
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":164
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-123
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Dallas Stars",
+                        "price":150
+                     },
+                     {
+                        "name":"Toronto Maple Leafs",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"05a5afa3f8548a362b5857be5e59cb08",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-15T23:07:00Z",
+      "home_team":"Washington Capitals",
+      "away_team":"New York Islanders",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":124
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-146
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":131
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-145
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":132
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-159
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":132
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-159
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":132
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-159
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":132
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-159
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":131
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-145
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":132
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-159
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":114
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-152
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":152
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-114
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":130
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":130
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New York Islanders",
+                        "price":135
+                     },
+                     {
+                        "name":"Washington Capitals",
+                        "price":-155
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"4afdd4fbe6394693640300d1027542c7",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T00:00:00Z",
+      "home_team":"Nashville Predators",
+      "away_team":"Pittsburgh Penguins",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-112
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-104
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-106
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-104
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-106
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-104
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-114
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-109
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":114
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Nashville Predators",
+                        "price":-110
+                     },
+                     {
+                        "name":"Pittsburgh Penguins",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"f89c74c69d551d1c21cba8668000710a",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T00:00:00Z",
+      "home_team":"Winnipeg Jets",
+      "away_team":"Vegas Golden Knights",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-112
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-104
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-102
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-108
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-102
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-109
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-105
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-115
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-114
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-109
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":114
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-110
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-110
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Vegas Golden Knights",
+                        "price":-115
+                     },
+                     {
+                        "name":"Winnipeg Jets",
+                        "price":-105
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"b3c88d62cb0bec26ad935fb87133d457",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T00:30:00Z",
+      "home_team":"Chicago Blackhawks",
+      "away_team":"Boston Bruins",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-174
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":146
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-182
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":164
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-185
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":164
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-186
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-186
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-186
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-186
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-185
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-182
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":140
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-139
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":182
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-185
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-190
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":160
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Boston Bruins",
+                        "price":-185
+                     },
+                     {
+                        "name":"Chicago Blackhawks",
+                        "price":150
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"5f105019d7d35ffdf61aa4ff55ca0e56",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T01:00:00Z",
+      "home_team":"Edmonton Oilers",
+      "away_team":"Detroit Red Wings",
+      "bookmakers":[
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":270
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-335
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":214
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-240
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":214
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-244
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":250
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-315
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":245
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-315
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":245
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-315
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":250
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-315
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":245
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-312
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":220
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-270
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":235
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-290
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Detroit Red Wings",
+                        "price":250
+                     },
+                     {
+                        "name":"Edmonton Oilers",
+                        "price":-320
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"909cbd3580bd5910c61a9acac1deafeb",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T02:00:00Z",
+      "home_team":"Vancouver Canucks",
+      "away_team":"New Jersey Devils",
+      "bookmakers":[
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":136
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-152
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":146
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-174
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":136
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":138
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betrivers",
+            "title":"BetRivers",
+            "last_update":"2022-03-14T16:40:44Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":138
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":138
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":138
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":138
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-167
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betfair",
+            "title":"Betfair",
+            "last_update":"2022-03-14T16:42:54Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":140
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-182
+                     }
+                  ]
+               },
+               {
+                  "key":"h2h_lay",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":182
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-139
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":130
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-150
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":145
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-170
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"New Jersey Devils",
+                        "price":150
+                     },
+                     {
+                        "name":"Vancouver Canucks",
+                        "price":-175
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"4c5dc3f68cd39281ba55388e9d523190",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T02:30:00Z",
+      "home_team":"Los Angeles Kings",
+      "away_team":"Colorado Avalanche",
+      "bookmakers":[
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-190
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":171
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-192
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":171
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-180
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":152
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-205
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":165
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-205
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":165
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-205
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":170
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-204
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":165
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-195
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":165
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-200
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":170
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"draftkings",
+            "title":"DraftKings",
+            "last_update":"2022-03-14T16:41:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Colorado Avalanche",
+                        "price":-205
+                     },
+                     {
+                        "name":"Los Angeles Kings",
+                        "price":165
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "id":"23ed9f2461478cc95b3baaed45b8b272",
+      "sport_key":"icehockey_nhl",
+      "sport_title":"NHL",
+      "commence_time":"2022-03-16T02:30:00Z",
+      "home_team":"San Jose Sharks",
+      "away_team":"Florida Panthers",
+      "bookmakers":[
+         {
+            "key":"lowvig",
+            "title":"LowVig.ag",
+            "last_update":"2022-03-14T16:39:39Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-210
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":188
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"betonlineag",
+            "title":"BetOnline.ag",
+            "last_update":"2022-03-14T16:40:25Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-213
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":188
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"fanduel",
+            "title":"FanDuel",
+            "last_update":"2022-03-14T16:40:59Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-196
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":164
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"barstool",
+            "title":"Barstool Sportsbook",
+            "last_update":"2022-03-14T16:41:49Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-220
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"twinspires",
+            "title":"TwinSpires",
+            "last_update":"2022-03-14T16:42:00Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-220
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"sugarhouse",
+            "title":"SugarHouse",
+            "last_update":"2022-03-14T16:42:08Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-220
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":180
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"unibet",
+            "title":"Unibet",
+            "last_update":"2022-03-14T16:38:04Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-217
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"bovada",
+            "title":"Bovada",
+            "last_update":"2022-03-14T16:42:10Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-210
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":175
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "key":"williamhill_us",
+            "title":"William Hill (US)",
+            "last_update":"2022-03-14T16:40:38Z",
+            "markets":[
+               {
+                  "key":"h2h",
+                  "outcomes":[
+                     {
+                        "name":"Florida Panthers",
+                        "price":-210
+                     },
+                     {
+                        "name":"San Jose Sharks",
+                        "price":175
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+]

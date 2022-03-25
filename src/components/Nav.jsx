@@ -6,7 +6,7 @@ export default function Nav() {
         <nav className="bg-gradient-to-b from-slate-200 via-slate-200 h-25">
             <div className="flex justify-between items-center mx-auto">
                 <a className="flex center-items" href="/">
-                    <img className="h-20 mr-3 bg-gradient-to-br from-emerald-400 via-emerald-400 hover:bg-transparent" src={logo}/>
+                    <img className="h-20 mr-3 bg-gradient-to-b from-emerald-400 hover:bg-black" src={logo}/>
                     <span className="self-center text-xl font-bold">Cook the Books</span>
                 </a>
                 <ul className="flex space-x-8 w-3/4 justify-end pr-9 border-r-2 border-gray-400">

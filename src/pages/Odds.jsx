@@ -1,32 +1,60 @@
-import React from "react"
-import data from "../data.json"
+import React, {useEffect, useState } from "react"
+import data from "../ml_data.json"
 
 export default function Odds() {
-    
-    const mf_data = JSON.stringify(data)
 
-    for(let i = 0; i < data.length; i++) {
-        const home_odds_dict = {}
-        const away_odds_dict = {}
-        let outcomes_array = []
-        for(let book in data[i]["bookmakers"]) {
-            outcomes_array = data[i]["bookmakers"][book]["markets"]["outcomes"];
-            outcomes_array.forEach((shit) => {
-                console.log(shit.name)
-            })
+    const [odds, setOdds] = useState({
+        home_team: ""
+    })
+
+    useEffect(() => {
+        for(let game in data) {
+            const home_odds_object = {}
+            const away_odds_object = {}
+            for(let book in data[game]["bookmakers"]) {
+                let home_book = data[game]["bookmakers"][book]["title"]
+                let away_book = data[game]["bookmakers"][book]["title"]
+                let home_num = data[game]["bookmakers"][book]["markets"][0]["outcomes"][0]["price"]
+                let away_num = data[game]["bookmakers"][book]["markets"][0]["outcomes"][1]["price"]
+                if(home_num > 0) {
+                    home_num = ((home_num/100)+1).toFixed(6)
+                    home_odds_object[home_book] = home_num
+                }
+                if(home_num < 0) {
+                    home_num = ((100/(-home_num))+1).toFixed(6)
+                    home_odds_object[home_book] = home_num
+                }
+                if(away_num > 0) {
+                    away_num = ((away_num/100)+1).toFixed(6)
+                    away_odds_object[away_book] = away_num
+                }
+                if(away_num < 0) {
+                    away_num = ((100/(-away_num))+1).toFixed(6)
+                    away_odds_object[away_book] = away_num
+                }
+            }
+            let hoov = Object.values(home_odds_object)
+            let aoov = Object.values(away_odds_object)
+            let opp = Math.max(...hoov)
+            let away_opp = Math.max(...aoov)
+            let arb = (1/opp) + (1/away_opp)
+            setOdds(prevOdds => ({
+                ...prevOdds,
+                home_team: data[game]["home_team"]
+            }))
+            console.log()
         }
+    }, [])
+
+    function renderOdds() {
+        return (
+            <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px]">{odds.home_team}</h1>
+        )
     }
-
-    console.log(data)
-
-
-
-
-
 
     return (
         <div>
-            <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px]">plz fuck me daddy</h1>
+            <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px]">completey non-perverted placeholder</h1>
             <br />
             <br />
             <br />
@@ -35,7 +63,9 @@ export default function Odds() {
             <br />
             <br />
             <br />
-            <p>{mf_data}</p>
+            <div>
+                {renderOdds()}
+            </div>
         </div>
     )
 }
