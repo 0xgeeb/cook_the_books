@@ -1,7 +1,10 @@
 import React, {useEffect, useState } from "react"
-import data from "../decimal_ml_data.json"
+// import data from "../decimal_ml_data.json"
+import logos from "../logos.json"
 
 export default function Odds() {
+
+    
     
     const [odds, setOdds] = useState([])
     
@@ -10,12 +13,31 @@ export default function Odds() {
         
         // }, [])
 
-        const allGames = []
-        for(let game in data) {
+    const params = {
+        'apiKey': process.env.REACT_APP_APIKEY,
+        'sport': 'icehockey_nhl',
+        'regions': 'us',
+        'markets': 'h2h',
+        'oddsFormat': 'decimal',
+        'dateFormat': 'iso'
+    }
+
+
+
+    async function fetchOdds() {
+        const response = await fetch(`https://api.the-odds-api.com/v4/sports/${params.sport}/odds/?apiKey=${params.apiKey}&regions=us&markets=${params.markets}&oddsFormat=american`);
+        const gypsy = response.json()
+        console.log(gypsy)
+    }
+
+    fetchOdds()
+        
+    const allGames = []
+    for(let game in gypsy) {
         const gameObject = {}
         const homeOddsArray = []
         const awayOddsArray = []
-        for(let book in data[game]["bookmakers"]) {
+        for(let book in data[game]["bookmakers"]) {    
             if(data[game]["bookmakers"][book]["key"] == "betfair") {
                 continue
             }
@@ -26,13 +48,13 @@ export default function Odds() {
                 "book": bookCut["title"],
                 "line": outcomesCut[0]["price"]
             }
-            const awayObject = {
-                "name": outcomesCut[1]["name"],
-                "book": bookCut["title"],
-                "line": outcomesCut[1]["price"]
-            }
-            homeOddsArray.push(homeObject)
-            awayOddsArray.push(awayObject)
+        const awayObject = {
+            "name": outcomesCut[1]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[1]["price"]
+        }
+        homeOddsArray.push(homeObject)
+        awayOddsArray.push(awayObject)
         }
         const opp = homeOddsArray.reduce(function(prev, current) {
             return (prev.line > current.line) ? prev : current
@@ -57,7 +79,9 @@ export default function Odds() {
         }
         allGames.push(gameObject)
     }
-
+    
+    
+    
     
     function updateState() {
         setOdds([])
@@ -69,11 +93,14 @@ export default function Odds() {
             })
         }
     }
-    
-    
-    
-    console.log(allGames)
-    console.log(odds)
+
+    function getLogo(team) {
+        for(let i in logos) {
+            if(team == logos[i].team) {
+                return logos[i].info.url
+            }
+        }
+    }
 
     
     
@@ -102,18 +129,52 @@ export default function Odds() {
             <br />
             <br />
             <br />
+            <div className="m-12">
+                {odds.length > 1 && <h1 className="flex justify-center text-3xl mb-5">games with an arb</h1>}
+                <div className="grid grid-cols-2 gap-4">
+                    {odds.map((x) => {
+                        return x.arb && 
+                            <div className="flex flex-col items-center border-2 border-emerald-400 rounded"> 
+                                <p className="mb-5">{x.home.name} - {x.away.name}</p>
+                                <div className="grid grid-cols-2">
+                                    <img src={getLogo(x.home.name)}/>
+                                    <img src={getLogo(x.away.name)}/>
+                                </div>
+                                <p>$1000 bankroll would net ${(1000-((1000/x.home.line)+(1000/x.away.line))).toFixed(2)}</p>
+                            </div>
+                    })}
+                </div>
+            </div>
             <br />
-            <div className="px-10 grid grid-cols-3 gap-3">
-                {odds.map((x) => 
-                    <div className="flex flex-col items-center border-2 border-emerald-400 rounded">
-                        <p className="mb-5">{x.home.name} - {x.away.name}</p>
-                        <p>$1000 bankroll would net ${(1000-((1000/x.home.line)+(1000/x.away.line))).toFixed(2)}</p>
-                    </div>
-                )}
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="m-12">
+                {odds.length > 1 && <h1 className="flex justify-center text-3xl mb-5">games with no arb</h1>}
+                <div className="grid grid-cols-3 gap-4">
+                    {odds.map((x) => {
+                        return !x.arb && 
+                            <div className="flex flex-col items-center border-2 border-red-400 rounded h-48"> 
+                                <p className="mb-5">{x.home.name} - {x.away.name}</p>
+                                <div className="grid grid-cols-2">
+                                    <img src={getLogo(x.home.name)}/>
+                                    <img src={getLogo(x.away.name)}/>
+                                    <span className="flex justify-center">{x.home.line}</span>
+                                    <span className="flex justify-center">{x.away.line}</span>
+                                </div>
+                            </div>
+                    })}
+                </div>
             </div>
         </div>
     )
 }
+
+
+
+
 
     //
     // https://stackoverflow.com/questions/70504702/how-to-push-objects-into-array-in-reactjs

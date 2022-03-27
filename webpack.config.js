@@ -5,6 +5,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     filename: 'index.html',
     inject: 'body'
 })
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
     entry: __dirname + '/src/index.js',
@@ -41,7 +42,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "index.css",
             chunkFilename: "index.css"
-          })
+          }),
+        new Dotenv()
     ],
     mode: 'development',
     devServer: {
