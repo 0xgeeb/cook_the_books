@@ -89,12 +89,12 @@ export default function Odds() {
                 return logos[i].info.url
             }
         }
+        return "https://cdn.anime-pictures.net/previews/f59/f591ed67a9d7530d11e6b54865760063_sp.jpg"
     }
-
     
     return (
         <div>
-            <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px] mb-24">unbelievable levels of gucciness</h1>
+            <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px] mb-24">bussin off them pills</h1>
             <div className="flex justify-center mb-24">
                 <button 
                     className="bg-slate-200 text-black hover:bg-black rounded-3xl hover:text-slate-200 p-4 border-4 border-emerald-400"
@@ -108,13 +108,15 @@ export default function Odds() {
                 <div className="grid grid-cols-2 gap-4">
                     {odds.map((x) => {
                         return x.arb && 
-                            <div className="flex flex-col items-center border-2 border-emerald-400 rounded"> 
-                                <p className="mb-5">{x.home.name} - {x.away.name}</p>
+                            <div className="flex flex-col items-center border-2 border-emerald-400 rounded pb-4"> 
+                                <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
                                 <div className="grid grid-cols-2">
-                                    <img src={getLogo(x.home.name)}/>
-                                    <img src={getLogo(x.away.name)}/>
+                                    <img className="place-self-end" src={getLogo(x.home.name)}/>
+                                    <p className="self-center place-self-center">{`bet $${(1000/x.home.line).toFixed(2)} on ${x.home.book} for ${x.home.line}`}</p>
+                                    <img className="place-self-end" src={getLogo(x.away.name)}/>
+                                    <p className="self-center place-self-center">{`bet $${(1000/x.away.line).toFixed(2)} on ${x.away.book} for ${x.away.line}`}</p>
                                 </div>
-                                <p>$1000 bankroll would net ${(1000-((1000/x.home.line)+(1000/x.away.line))).toFixed(2)}</p>
+                                <p className="flex justify-center mt-4">{`$${(1000-((1000/x.home.line)+(1000/x.away.line))).toFixed(2)} profit on a total bet of $${((1000/x.home.line)+(1000/x.away.line)).toFixed(2)} for a risk-free ${(100*(1000-((1000/x.home.line)+(1000/x.away.line)))/((1000/x.home.line)+(1000/x.away.line))).toFixed(2)}`}%</p>
                             </div>
                     })}
                 </div>
@@ -124,13 +126,15 @@ export default function Odds() {
                 <div className="grid grid-cols-3 gap-4">
                     {odds.map((x) => {
                         return !x.arb && 
-                            <div className="flex flex-col items-center border-2 border-red-400 rounded h-48"> 
-                                <p className="mb-5">{x.home.name} - {x.away.name}</p>
+                            <div className="flex flex-col items-center border-2 border-red-400 rounded pb-2"> 
+                                <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
                                 <div className="grid grid-cols-2">
                                     <img src={getLogo(x.home.name)}/>
                                     <img src={getLogo(x.away.name)}/>
                                     <span className="flex justify-center">{x.home.line}</span>
                                     <span className="flex justify-center">{x.away.line}</span>
+                                    <p className="flex justify-center">{x.home.book}</p>
+                                    <p className="flex justify-center">{x.away.book}</p>
                                 </div>
                             </div>
                     })}
