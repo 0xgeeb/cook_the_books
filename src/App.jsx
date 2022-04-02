@@ -10,15 +10,17 @@ import Testing from "./pages/Testing.jsx"
 
 export default function App() {
     return (
-        <Router className="box-border">
-            <Nav />
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/odds" element={<Odds />} />
-                <Route exact path="/test" element={<Test />} />
-                <Route exact path="/testing" element={<Testing />} />
-            </Routes>
-            {/* <Footer /> */}
-        </Router>
+        <div className="flex flex-col h-screen justify-between">
+            <Router>
+                <Nav />
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route exact path="/odds" element={<Odds />} />
+                    <Route exact path="/test" element={<Test />} />
+                    <Route exact path="/testing" element={<Testing />} />
+                </Routes>
+                <Footer />
+            </Router>
+        </div>
     )
 }

@@ -89,8 +89,7 @@ export default function Odds() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(sport)
-        console.log(bet)
+        fetchOdds();
     }
     
     return (

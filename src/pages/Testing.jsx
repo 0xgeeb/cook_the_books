@@ -12,11 +12,11 @@ export default function Odds() {
     
     useEffect(() => {
         async function fetchOdds() {
-            const response = await fetch(`https://api.the-odds-api.com/v4/sports/${inputs.sport}/odds/?apiKey=${process.env.REACT_APP_APIKEY}&regions=us&markets=${inputs.bet}&oddsFormat=decimal`);
-            const data = await response.json()
-            const obj = {...data}
+            // const response = await fetch(`https://api.the-odds-api.com/v4/sports/${inputs.sport}/odds/?apiKey=${process.env.REACT_APP_APIKEY}&regions=us&markets=${inputs.bet}&oddsFormat=decimal`);
+            // const data = await response.json()
+            // const obj = {...data}
             const allGames = []
-            for(let game in obj) {
+            for(let game in data) {
                 const gameObject = {}
                 const homeOddsArray = []
                 const awayOddsArray = []
@@ -99,7 +99,7 @@ export default function Odds() {
     
     return (
         <div>
-            <h1 className="text-emerald-400 flex justify-center mt-12 text-[80px] mb-24">super test bitch</h1>
+            <h1 className="text-emerald-400 flex justify-center mt-12 text-[80px] mb-24">super test</h1>
             <form onSubmit={handleSubmit}>
                 <div className="flex justify-center mb-12">
                     <div className="grid grid-cols-2 gap-4">
