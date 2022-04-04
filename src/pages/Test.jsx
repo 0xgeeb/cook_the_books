@@ -1,82 +1,99 @@
 import React, {useEffect, useState } from "react"
 import data from "../decimal_ml_data.json"
 import logos from "../logos.json"
+import logo from "../.././public/images/logo.png"
 
 export default function Odds() {
 
     const [odds, setOdds] = useState([])
-
+    const [inputs, setInputs] = useState({})
     const [sport, setSport] = useState('')
     const [bet, setBet] = useState('')
+    const [arb, setArb] = useState(false)
+    const [noArb, setNoArb] = useState(false)
 
     
-    // useEffect(() => {
-        
-        
-        // }, [])
+    useEffect(() => {
+        async function fetchOdds() {
+            // const response = await fetch(`https://api.the-odds-api.com/v4/sports/${inputs.sport}/odds/?apiKey=${process.env.REACT_APP_APIKEY}&regions=us&markets=${inputs.bet}&oddsFormat=decimal`);
+            // const data = await response.json()
+            // const obj = {...data}
+            const allGames = []
+            for(let game in data) {
+                const gameObject = {}
+                const homeOddsArray = []
+                const awayOddsArray = []
+                for(let book in data[game]["bookmakers"]) {    
+                    if(data[game]["bookmakers"][book]["key"] == "betfair") {
+                        continue
+                    }
+                    const bookCut = data[game]["bookmakers"][book]
+                    const outcomesCut = bookCut["markets"][0]["outcomes"]
+                    const homeObject = {
+                        "name": outcomesCut[0]["name"],
+                        "book": bookCut["title"],
+                        "line": outcomesCut[0]["price"]
+                    }
+                    const awayObject = {
+                        "name": outcomesCut[1]["name"],
+                        "book": bookCut["title"],
+                        "line": outcomesCut[1]["price"]
+                    }
+                    homeOddsArray.push(homeObject)
+                    awayOddsArray.push(awayObject)
+                }
+                const opp = homeOddsArray.reduce(function(prev, current) {
+                    return (prev.line > current.line) ? prev : current
+                })
+                const awayOpp = awayOddsArray.reduce(function(prev, current) {
+                    return (prev.line > current.line) ? prev : current
+                })
+                const arb = (1/opp.line) + (1/awayOpp.line)
+                if(arb > 1) {
+                    gameObject = {
+                        "home": opp,
+                        "away": awayOpp,
+                        "arb": false
+                    }
+                }
+                else {
+                    gameObject = {
+                        "home": opp,
+                        "away": awayOpp,
+                        "arb": true
+                    }
+                }
+                allGames.push(gameObject)
+            }
+            setOdds([])
+            for(let i in allGames) {
+                setOdds((prevOdds) => {
+                    const newState = [...prevOdds]
+                    newState.push(allGames[i])
+                    return newState
+                })
+            }
+            for(let i in allGames) {
+                if (allGames[i].arb) {
+                    setArb(current => !current)
+                    break
+                }
+                console.log('just me and my friend')
+            }
+            for(let i in allGames) {
+                if (!allGames[i].arb) {
+                    setNoArb(current => !current)
+                    break
+                }
+                console.log('never')
+            }
+            console.log(allGames)
+            console.log(data)
+        }
+        fetchOdds()
+    }, [inputs])
 
 
-    async function fetchOdds(event) {
-        event.preventDefault();
-        console.log(event)
-        const allGames = []
-        for(let game in data) {
-            const gameObject = {}
-            const homeOddsArray = []
-            const awayOddsArray = []
-            for(let book in data[game]["bookmakers"]) {    
-                if(data[game]["bookmakers"][book]["key"] == "betfair") {
-                    continue
-                }
-                const bookCut = data[game]["bookmakers"][book]
-                const outcomesCut = bookCut["markets"][0]["outcomes"]
-                const homeObject = {
-                    "name": outcomesCut[0]["name"],
-                    "book": bookCut["title"],
-                    "line": outcomesCut[0]["price"]
-                }
-                const awayObject = {
-                    "name": outcomesCut[1]["name"],
-                    "book": bookCut["title"],
-                    "line": outcomesCut[1]["price"]
-                }
-                homeOddsArray.push(homeObject)
-                awayOddsArray.push(awayObject)
-            }
-            const opp = homeOddsArray.reduce(function(prev, current) {
-                return (prev.line > current.line) ? prev : current
-            })
-            const awayOpp = awayOddsArray.reduce(function(prev, current) {
-                return (prev.line > current.line) ? prev : current
-            })
-            const arb = (1/opp.line) + (1/awayOpp.line)
-            if(arb > 1) {
-                gameObject = {
-                    "home": opp,
-                    "away": awayOpp,
-                    "arb": false
-                }
-            }
-            else {
-                gameObject = {
-                    "home": opp,
-                    "away": awayOpp,
-                    "arb": true
-                }
-            }
-            allGames.push(gameObject)
-        }
-        setOdds([])
-        for(let i in allGames) {
-            setOdds((prevOdds) => {
-                const newState = [...prevOdds]
-                newState.push(allGames[i])
-                return newState
-            })
-        }
-        console.log(allGames)
-        console.log(data)
-    }
 
     function getLogo(team) {
         for(let i in logos) {
@@ -89,12 +106,20 @@ export default function Odds() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        fetchOdds();
+        setInputs({})
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            "sport": sport,
+            "bet": bet
+        }))
     }
     
     return (
         <div>
-            <h1 className="text-emerald-400 flex justify-center mt-12 text-[80px] mb-24">testing page</h1>
+            <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px]">secret testing grounds</h1>
+            <div className="flex justify-center mb-24">
+                <img className="h-20 w-20" src={logo}/>
+            </div>
             <form onSubmit={handleSubmit}>
                 <div className="flex justify-center mb-12">
                     <div className="grid grid-cols-2 gap-4">
@@ -117,14 +142,14 @@ export default function Odds() {
                 <div className="flex justify-center">
                     <button 
                         className="bg-slate-200 text-black hover:bg-black rounded-3xl hover:text-slate-200 p-4 border-4 border-emerald-400"
-                        // onClick={fetchOdds}
                     >
                         find arbs
                     </button>
                 </div>
             </form>
+            {odds.length < 1 && <div className="mb-96"></div>}
             <div className="mt-12 ml-12 mr-12 mb-24">
-                {odds.length > 1 && <h1 className="flex justify-center text-3xl mb-5">games with an arb</h1>}
+                {arb && <h1 className="flex justify-center text-3xl mb-5">games with an arb</h1>}
                 <div className="grid grid-cols-2 gap-4">
                     {odds.map((x) => {
                         return x.arb && 
@@ -142,7 +167,7 @@ export default function Odds() {
                 </div>
             </div>
             <div className="m-12">
-                {odds.length > 1 && <h1 className="flex justify-center text-3xl mb-5">games with no arb</h1>}
+                {noArb && <h1 className="flex justify-center text-3xl mb-5">games with no arb</h1>}
                 <div className="grid grid-cols-3 gap-4">
                     {odds.map((x) => {
                         return !x.arb && 
@@ -163,13 +188,3 @@ export default function Odds() {
         </div>
     )
 }
-
-
-
-
-
-    //
-    // https://stackoverflow.com/questions/70504702/how-to-push-objects-into-array-in-reactjs
-    // use second comment from above link and include second useState for fetching the odds json
-    // then use the useEffect bottom hook as the second useState
-    // then have the button of the form onClick set the second useState
