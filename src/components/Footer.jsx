@@ -3,7 +3,7 @@ import logo from "../.././public/images/logo.png"
 
 export default function Footer() {
     return (
-        <footer className="bg-slate-200 h-24 bottom-0">
+        <footer className="bg-slate-200 h-24 absolute bottom-0 w-screen">
             <div className="flex justify-between items-center">
                 <div className="flex flex-row items-center">
                     <h4 className="text-3xl ml-4 mb-6 mt-6 font-rock">cook the books</h4>
@@ -16,7 +16,7 @@ export default function Footer() {
                         focusable="false"
                         data-prefix="fab"
                         data-icon="twitter"
-                        class="svg-inline--fa fa-twitter w-4"
+                        className="svg-inline--fa fa-twitter w-4"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
@@ -34,7 +34,7 @@ export default function Footer() {
                         focusable="false"
                         data-prefix="fab"
                         data-icon="github"
-                        class="svg-inline--fa fa-github w-4"
+                        className="svg-inline--fa fa-github w-4"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 496 512"

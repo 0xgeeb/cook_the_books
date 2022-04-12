@@ -45,6 +45,7 @@ module.exports = {
           }),
         new Dotenv()
     ],
+    target: 'web',
     mode: 'development',
     devServer: {
         historyApiFallback: true

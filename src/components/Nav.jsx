@@ -5,7 +5,7 @@ export default function Nav() {
     return (
         <nav className="sticky top-0 h-20 bg-slate-200">
             <div className="flex justify-between w-5/6 items-center mx-auto">
-                <a className="flex center-items hover:bg-gradient-to-t from-emerald-400 via-white pr-10" href="/">
+                <a className="flex center-items hover:bg-gradient-to-t from-emerald-400 via-slate-200 pr-10" href="/">
                     <img className="h-20" src={logo}/>
                     <span className="self-center text-2xl pl-2 font-bold w-72">Cook the Books</span>
                 </a>
@@ -21,7 +21,7 @@ export default function Nav() {
                     </li>
                 </ul>
                 <div className="flex justify-end ml-5">
-                    <a href="/odds"><button className="mr-4 py-2 px-4 bg-emerald-400 text-white hover:text-black rounded-lg">Enter App</button></a>
+                    <a href="/odds"><button className="ml-4 mr-4 py-2 px-4 bg-emerald-400 text-white hover:text-black rounded-lg">Enter App</button></a>
                 </div>
             </div>
         </nav>

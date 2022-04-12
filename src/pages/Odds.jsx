@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react"
+import React, {useEffect, useState, useRef } from "react"
 import logos from "../utils/logos.json"
 import logo from "../.././public/images/logo.png"
 
@@ -112,8 +112,8 @@ export default function Odds() {
     }
     
     return (
-        <div className="flex justify-center mb-24 h-screen">
-            <div className="w-5/6 bg-white border-emerald-400 rounded border-4 overflow-auto">
+        <div className="flex justify-center my-24 h-screen">
+            <div className="w-5/6 bg-white border-emerald-400 rounded border-4 overflow-auto mb-24">
                 <h1 className="text-emerald-400 flex justify-center mt-24 text-[80px]">iykyk</h1>
                 <div className="flex justify-center mb-24">
                     <img className="h-20 w-20" src={logo}/>
@@ -127,7 +127,7 @@ export default function Odds() {
                                 <option></option>
                                 <option value="basketball_nba">NBA</option>
                                 <option value="icehockey_nhl">NHL</option>
-                                <option value="basketball_ncaab">NCAA</option>
+                                <option value="baseball_mlb">MLB</option>
                             </select>
                             <div className="grid grid-cols-2 gap-4">
                                 <input className="place-self-center" type="radio" id="h2h" name="betradio" onChange={(e) => setBet(e.target.id)}/>
