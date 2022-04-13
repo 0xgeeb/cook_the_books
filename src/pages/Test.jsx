@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import data from "../utils/spreads.json"
+// import data from "../utils/decimal_ml_data.json"
 import logos from "../utils/logos.json"
 import logo from "../.././public/images/logo.png"
 
@@ -9,17 +10,18 @@ export default function Odds() {
   const [sport, setSport] = useState('')
   const [bet, setBet] = useState('')
   const [arb, setArb] = useState(false)
-  const [noArb, setNoArb] = useState(false)
   const [loading, setLoading] = useState(false)
   
   async function fetchOdds() {
     setLoading(current => !current)
-    // const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${process.env.REACT_APP_APIKEY}&regions=us&markets=${bet}&oddsFormat=decimal`);
-    // const data = await response.json()
-    // const obj = {...data}
+    const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${process.env.REACT_APP_APIKEY}&regions=us&markets=${bet}&oddsFormat=decimal`);
+    const data = await response.json()
+    const obj = {...data}
     const allGames = []
-    for (let game in data) {
+    for (let game in obj) {
       const gameObject = {}
+      const homeObject = {}
+      const awayObject = {}
       const homeOddsArray = []
       const awayOddsArray = []
       for (let book in data[game]["bookmakers"]) {
@@ -28,15 +30,35 @@ export default function Odds() {
         }
         const bookCut = data[game]["bookmakers"][book]
         const outcomesCut = bookCut["markets"][0]["outcomes"]
-        const homeObject = {
-          "name": outcomesCut[0]["name"],
-          "book": bookCut["title"],
-          "line": outcomesCut[0]["price"]
+        if (bet == "spreads") {
+          homeObject = {
+            "name": outcomesCut[0]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[0]["price"],
+            "id": data[game]["id"],
+            "spread": outcomesCut[0]["point"]
+          }
+          awayObject = {
+            "name": outcomesCut[1]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[1]["price"],
+            "id": data[game]["id"],
+            "spread": outcomesCut[1]["point"]
+          }
         }
-        const awayObject = {
-          "name": outcomesCut[1]["name"],
-          "book": bookCut["title"],
-          "line": outcomesCut[1]["price"]
+        else {
+          homeObject = {
+            "name": outcomesCut[0]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[0]["price"],
+            "id": data[game]["id"]
+          }
+          awayObject = {
+            "name": outcomesCut[1]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[1]["price"],
+            "id": data[game]["id"]
+          }
         }
         homeOddsArray.push(homeObject)
         awayOddsArray.push(awayObject)
@@ -52,18 +74,31 @@ export default function Odds() {
         gameObject = {
           "home": opp,
           "away": awayOpp,
-          "arb": false
+          "arb": false,
+          "spread": true
         }
       }
       else {
         gameObject = {
           "home": opp,
           "away": awayOpp,
-          "arb": true
+          "arb": true,
+          "spread": true
+        }
+        if (bet == "spreads") {  
+          if (opp.spread+awayOpp.spread != 0) {
+            gameObject = {
+              "home": opp,
+              "away": awayOpp,
+              "arb": false,
+              "spread": false
+            }
+          }
         }
       }
       allGames.push(gameObject)
     }
+    console.log(allGames)
     setOdds([])
     for (let i in allGames) {
       setOdds((prevOdds) => {
@@ -78,14 +113,6 @@ export default function Odds() {
         break
       }
     }
-    for (let i in allGames) {
-      if (!allGames[i].arb) {
-        setNoArb(current => !current)
-        break
-      }
-    }
-    console.log(allGames)
-    console.log(data)
     setLoading(current => !current)
   }
 
@@ -96,6 +123,34 @@ export default function Odds() {
       }
     }
     return "https://cdn.anime-pictures.net/previews/f59/f591ed67a9d7530d11e6b54865760063_sp.jpg"
+  }
+
+  function arbNoSpread() {
+    for(let i in odds) {
+      if (!odds[i].spread) {
+        return true
+      }
+    }
+  }
+
+  function arbNoSpreadMap(object) {
+    if(!object.arb && !object.spread) {
+      return true
+    }
+  }
+
+  function noArbNoSpread() {
+    for(let i in odds) {
+      if (!odds[i].arb && odds[i].spread) {
+        return true
+      }
+    }
+  }
+
+  function noArbNoSpreadMap(object) {
+    if(!object.arb && object.spread) {
+      return true
+    }
   }
 
   function handleSubmit(event) {
@@ -143,7 +198,7 @@ export default function Odds() {
         <div className="grid grid-cols-2 gap-4">
           {odds.map((x) => {
             return x.arb &&
-              <div className="flex flex-col items-center border-2 border-emerald-400 rounded pb-4">
+              <div className="flex flex-col items-center border-2 border-emerald-400 rounded pb-4" key={x.home.id}>
                 <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
                 <div className="grid grid-cols-2">
                   <img className="place-self-end" src={getLogo(x.home.name)} />
@@ -157,11 +212,30 @@ export default function Odds() {
         </div>
       </div>
       <div className="m-12">
-        {noArb && <h1 className="flex justify-center text-3xl mb-5">games with no arb</h1>}
+        { arbNoSpread() && <h1 className="flex justify-center text-3xl mb-5">games with arb but potential loss due to spread diff.</h1>}
         <div className="grid grid-cols-3 gap-4">
           {odds.map((x) => {
-            return !x.arb &&
-              <div className="flex flex-col items-center border-2 border-red-400 rounded pb-2">
+            return arbNoSpreadMap(x) &&
+              <div className="flex flex-col items-center border-2 border-yellow-400 rounded pb-2" key={x.away.id}>
+                <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
+                <div className="grid grid-cols-2">
+                  <img src={getLogo(x.home.name)} />
+                  <img src={getLogo(x.away.name)} />
+                  <span className="flex justify-center">{x.home.line}</span>
+                  <span className="flex justify-center">{x.away.line}</span>
+                  <p className="flex justify-center">{x.home.book}</p>
+                  <p className="flex justify-center">{x.away.book}</p>
+                </div>
+              </div>
+          })}
+        </div>
+      </div>
+      <div className="m-12">
+        {noArbNoSpread() && <h1 className="flex justify-center text-3xl mb-5">games with no arb</h1>}
+        <div className="grid grid-cols-3 gap-4">
+          {odds.map((x) => {
+            return noArbNoSpreadMap(x) &&
+              <div className="flex flex-col items-center border-2 border-red-400 rounded pb-2" key={x.away.id}>
                 <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
                 <div className="grid grid-cols-2">
                   <img src={getLogo(x.home.name)} />
