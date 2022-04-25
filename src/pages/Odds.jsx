@@ -6,6 +6,7 @@ import logo from "../.././public/images/logo.png"
 
 export default function Odds() {
 
+  const apiKey = process.env.REACT_APP_APIKEY;
   const [odds, setOdds] = useState([])
   const [sport, setSport] = useState('')
   const [bet, setBet] = useState('')
@@ -14,7 +15,7 @@ export default function Odds() {
   
   async function fetchOdds() {
     setLoading(current => !current)
-    const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${process.env.REACT_APP_APIKEY}&regions=us&markets=${bet}&oddsFormat=decimal`);
+    const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${apiKey}&regions=us&markets=${bet}&oddsFormat=decimal`);
     const data = await response.json()
     const obj = {...data}
     const allGames = []
@@ -134,17 +135,17 @@ export default function Odds() {
     }
   }
 
-  function arbNoSpreadMap(object) {
-    if(!object.arb && !object.spread) {
-      return true
-    }
-  }
-
   function noArbNoSpread() {
     for(let i in odds) {
       if (!odds[i].arb && odds[i].spread) {
         return true
       }
+    }
+  }
+
+  function arbNoSpreadMap(object) {
+    if(!object.arb && !object.spread) {
+      return true
     }
   }
 
