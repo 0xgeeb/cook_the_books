@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import data from "../utils/spreads.json"
-// import data from "../utils/decimal_ml_data.json"
+// import data from "../utils/spreads.json"
+import data from "../utils/decimal_ml_data.json"
 import logos from "../utils/logos.json"
 import logo from "../.././public/images/logo.png"
+import { upload, returnStuff } from './../server/postGame';
 
 export default function Odds() {
 
@@ -12,14 +13,19 @@ export default function Odds() {
   const [bet, setBet] = useState('')
   const [arb, setArb] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  function profitPercentage(homeLine, awayLine) {
+    return (100 * (1000 - ((1000 / homeLine) + (1000 / awayLine))) / ((1000 / homeLine) + (1000 / awayLine))).toFixed(2)
+  }
   
+
   async function fetchOdds() {
     setLoading(current => !current)
-    const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${apiKey}&regions=us&markets=${bet}&oddsFormat=decimal`);
-    const data = await response.json()
-    const obj = {...data}
+    // const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${apiKey}&regions=us&markets=${bet}&oddsFormat=decimal`);
+    // const data = await response.json()
+    // const obj = {...data}
     const allGames = []
-    for (let game in obj) {
+    for (let game in data) {
       const gameObject = {}
       const homeObject = {}
       const awayObject = {}
@@ -98,6 +104,10 @@ export default function Odds() {
         }
       }
       allGames.push(gameObject)
+      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 1 && profitPercentage(gameObject.home.line, gameObject.away.line) < 2) {
+        // upload(gameObject);
+        // console.log('hopefully just sent to database');
+      }
     }
     console.log(allGames)
     setOdds([])
@@ -208,7 +218,7 @@ export default function Odds() {
                   <img className="place-self-end" src={getLogo(x.away.name)} />
                   <p className="self-center place-self-center">{`bet $${(1000 / x.away.line).toFixed(2)} on ${x.away.book} for ${x.away.line}`}</p>
                 </div>
-                <p className="flex justify-center mt-4">{`$${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)} profit on a total bet of $${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)} for a risk-free ${(100 * (1000 - ((1000 / x.home.line) + (1000 / x.away.line))) / ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)}`}%</p>
+                <p className="flex justify-center mt-4">{`$${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)} profit on a total bet of $${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)} for a risk-free ${profitPercentage(x.home.line, x.away.line)}`}%</p>
               </div>
           })}
         </div>

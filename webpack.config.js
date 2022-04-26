@@ -5,7 +5,8 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     filename: 'index.html',
     inject: 'body'
 })
-const Dotenv = require('dotenv-webpack')
+const Dotenv = require('dotenv-webpack');
+const { webpack } = require("webpack");
 
 module.exports = {
     entry: __dirname + '/src/index.js',
@@ -44,6 +45,10 @@ module.exports = {
             chunkFilename: "index.css"
           }),
         new Dotenv()
+        // new webpack.DefinePlugin({
+        //     'process.env.REACT_APP_APIKEY': JSON.stringify(process.env.REACT_APP_APIKEY),
+        //     'process.env.REACT_APP_ATLAS_URI': JSON.stringify(process.env.REACT_APP_ATLAS_URI),
+        // })
     ],
     target: 'web',
     mode: 'development',
