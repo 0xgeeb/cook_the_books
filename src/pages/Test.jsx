@@ -2,8 +2,8 @@ import React, { useState } from "react"
 // import data from "../utils/spreads.json"
 import data from "../utils/decimal_ml_data.json"
 import logos from "../utils/logos.json"
-import logo from "../.././public/images/logo.png"
-import { upload, returnStuff } from './../server/postGame';
+import logo from ".././images/logo.png"
+import axios from "axios";
 
 export default function Odds() {
 
@@ -16,21 +16,35 @@ export default function Odds() {
 
   function profitPercentage(homeLine, awayLine) {
     return (100 * (1000 - ((1000 / homeLine) + (1000 / awayLine))) / ((1000 / homeLine) + (1000 / awayLine))).toFixed(2)
+  };
+
+  // async function getJoke() {
+  //   const response = await axios.get('/minecraftspeedrun');
+  //   console.log(response);
+  // };
+
+  // getJoke();
+
+  async function getBets() {
+    const response = await axios.get('/minecraftspeedrun/bets');
   }
+
+  getBets();
   
 
   async function fetchOdds() {
     setLoading(current => !current)
-    // const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${apiKey}&regions=us&markets=${bet}&oddsFormat=decimal`);
-    // const data = await response.json()
-    // const obj = {...data}
+    const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${apiKey}&regions=us&markets=${bet}&oddsFormat=decimal`);
+    const data = await response.json()
+    // console.log(data);
+    const obj = {...data}
     const allGames = []
-    for (let game in data) {
-      const gameObject = {}
-      const homeObject = {}
-      const awayObject = {}
-      const homeOddsArray = []
-      const awayOddsArray = []
+    for (let game in obj) {
+      let gameObject = {}
+      let homeObject = {}
+      let awayObject = {}
+      let homeOddsArray = []
+      let awayOddsArray = []
       for (let book in data[game]["bookmakers"]) {
         if (data[game]["bookmakers"][book]["key"] == "betfair") {
           continue

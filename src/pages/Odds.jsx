@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import data from "../utils/spreads.json"
 // import data from "../utils/decimal_ml_data.json"
 import logos from "../utils/logos.json"
-import logo from "../.././public/images/logo.png"
+import logo from ".././images/logo.png"
 
 export default function Odds() {
 

@@ -1,12 +1,12 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import "../public/index.css"
+import "./index.css"
 import Nav from "./components/Nav.jsx"
 import Footer from "./components/Footer.jsx"
 import Home from "./pages/Home.jsx"
 import Odds from "./pages/Odds.jsx"
 import Test from "./pages/Test.jsx"
-import background from ".././public/images/background.jpg"
+import background from "./images/background.jpg"
 
 export default function App() {
     return (
