@@ -56,6 +56,11 @@ app.get('/minecraftspeedrun/bets', async (req, res) => {
   res.send(response.data);
 });
 
+app.get('/minecraftspeedrun/recent', async (req, res) => {
+  const response = await Game.find().sort({ _id: -1 }).limit(2);
+  res.send(response);
+})
+
 console.log("NODE_ENV is", process.env.NODE_ENV);
  
 if (process.env.NODE_ENV === "production") {
