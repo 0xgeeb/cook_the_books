@@ -1,5 +1,4 @@
 import React from "react"
-import logo from ".././images/logo.png"
 import colored_logo from ".././images/colored_logo.png"
 
 export default function Nav() {
@@ -18,11 +17,11 @@ export default function Nav() {
                         <a className="hover:text-gray-400" href="">Mint</a>
                     </li>
                     <li>
-                        <a className="hover:text-gray-400" href="">Contact</a>
+                        <a className="hover:text-gray-400" href="">About</a>
                     </li>
                 </ul>
                 <div className="flex justify-end ml-5">
-                    <a href="/odds"><button className="ml-4 mr-4 py-2 px-4 whitespace-nowrap bg-cyan-400 text-white hover:text-black rounded-lg">Enter App</button></a>
+                    <a href="/odds"><button className="ml-4 mr-4 py-2 px-4 whitespace-nowrap bg-cyan-400 text-white hover:text-black rounded-lg" id="nav-button">Enter App</button></a>
                 </div>
             </div>
         </nav>

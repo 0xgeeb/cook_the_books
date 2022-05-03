@@ -1,3 +1,4 @@
 /testing
 /node_modules
+/build
 .env

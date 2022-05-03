@@ -1,121 +1,20 @@
 import React, { useState } from "react"
-import data from "../utils/spreads.json"
+// import data from "../utils/spreads.json"
 // import data from "../utils/decimal_ml_data.json"
 import logos from "../utils/logos.json"
-import logo from ".././images/logo.png"
+import logo from ".././images/colored_logo.png"
+import axios from "axios";
 
 export default function Odds() {
 
-  const apiKey = process.env.REACT_APP_APIKEY;
   const [odds, setOdds] = useState([])
   const [sport, setSport] = useState('')
   const [bet, setBet] = useState('')
   const [arb, setArb] = useState(false)
   const [loading, setLoading] = useState(false)
-  
-  async function fetchOdds() {
-    setLoading(current => !current)
-    const response = await fetch(`https://api.the-odds-api.com/v4/sports/${sport}/odds/?apiKey=${apiKey}&regions=us&markets=${bet}&oddsFormat=decimal`);
-    const data = await response.json()
-    const obj = {...data}
-    const allGames = []
-    for (let game in obj) {
-      const gameObject = {}
-      const homeObject = {}
-      const awayObject = {}
-      const homeOddsArray = []
-      const awayOddsArray = []
-      for (let book in data[game]["bookmakers"]) {
-        if (data[game]["bookmakers"][book]["key"] == "betfair") {
-          continue
-        }
-        const bookCut = data[game]["bookmakers"][book]
-        const outcomesCut = bookCut["markets"][0]["outcomes"]
-        if (bet == "spreads") {
-          homeObject = {
-            "name": outcomesCut[0]["name"],
-            "book": bookCut["title"],
-            "line": outcomesCut[0]["price"],
-            "id": data[game]["id"],
-            "spread": outcomesCut[0]["point"]
-          }
-          awayObject = {
-            "name": outcomesCut[1]["name"],
-            "book": bookCut["title"],
-            "line": outcomesCut[1]["price"],
-            "id": data[game]["id"],
-            "spread": outcomesCut[1]["point"]
-          }
-        }
-        else {
-          homeObject = {
-            "name": outcomesCut[0]["name"],
-            "book": bookCut["title"],
-            "line": outcomesCut[0]["price"],
-            "id": data[game]["id"]
-          }
-          awayObject = {
-            "name": outcomesCut[1]["name"],
-            "book": bookCut["title"],
-            "line": outcomesCut[1]["price"],
-            "id": data[game]["id"]
-          }
-        }
-        homeOddsArray.push(homeObject)
-        awayOddsArray.push(awayObject)
-      }
-      const opp = homeOddsArray.reduce(function (prev, current) {
-        return (prev.line > current.line) ? prev : current
-      })
-      const awayOpp = awayOddsArray.reduce(function (prev, current) {
-        return (prev.line > current.line) ? prev : current
-      })
-      const arb = (1 / opp.line) + (1 / awayOpp.line)
-      if (arb > 1) {
-        gameObject = {
-          "home": opp,
-          "away": awayOpp,
-          "arb": false,
-          "spread": true
-        }
-      }
-      else {
-        gameObject = {
-          "home": opp,
-          "away": awayOpp,
-          "arb": true,
-          "spread": true
-        }
-        if (bet == "spreads") {  
-          if (opp.spread+awayOpp.spread != 0) {
-            gameObject = {
-              "home": opp,
-              "away": awayOpp,
-              "arb": false,
-              "spread": false
-            }
-          }
-        }
-      }
-      allGames.push(gameObject)
-    }
-    console.log(allGames)
-    setOdds([])
-    for (let i in allGames) {
-      setOdds((prevOdds) => {
-        const newState = [...prevOdds]
-        newState.push(allGames[i])
-        return newState
-      })
-    }
-    setArb(false)
-    for (let i in allGames) {
-      if (allGames[i].arb) {
-        setArb(current => !current)
-        break
-      }
-    }
-    setLoading(current => !current)
+
+  function profitPercentage(homeLine, awayLine) {
+    return (100 * (1000 - ((1000 / homeLine) + (1000 / awayLine))) / ((1000 / homeLine) + (1000 / awayLine))).toFixed(2)
   }
 
   function getLogo(team) {
@@ -158,6 +57,121 @@ export default function Odds() {
   function handleSubmit(event) {
     event.preventDefault();
     fetchOdds();
+  }
+  
+  async function uploadToDB(gameObject) {
+    await axios.post('/minecraftspeedrun/db', gameObject);
+    console.log('just uploaded to database on god');
+  }
+
+  async function fetchOdds() {
+    setLoading(current => !current)
+    const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
+    const obj = {...response.data}
+    const allGames = []
+    for (let game in obj) {
+      let gameObject = {}
+      let homeObject = {}
+      let awayObject = {}
+      let homeOddsArray = []
+      let awayOddsArray = []
+      for (let book in response.data[game]["bookmakers"]) {
+        if (response.data[game]["bookmakers"][book]["key"] == "betfair") {
+          continue
+        }
+        const bookCut = response.data[game]["bookmakers"][book]
+        const outcomesCut = bookCut["markets"][0]["outcomes"]
+        if (bet == "spreads") {
+          homeObject = {
+            "name": outcomesCut[0]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[0]["price"],
+            "id": response.data[game]["id"],
+            "spread": outcomesCut[0]["point"]
+          }
+          awayObject = {
+            "name": outcomesCut[1]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[1]["price"],
+            "id": response.data[game]["id"],
+            "spread": outcomesCut[1]["point"]
+          }
+        }
+        else {
+          homeObject = {
+            "name": outcomesCut[0]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[0]["price"],
+            "id": response.data[game]["id"]
+          }
+          awayObject = {
+            "name": outcomesCut[1]["name"],
+            "book": bookCut["title"],
+            "line": outcomesCut[1]["price"],
+            "id": response.data[game]["id"]
+          }
+        }
+        homeOddsArray.push(homeObject)
+        awayOddsArray.push(awayObject)
+      }
+      const opp = homeOddsArray.reduce(function (prev, current) {
+        return (prev.line > current.line) ? prev : current
+      })
+      const awayOpp = awayOddsArray.reduce(function (prev, current) {
+        return (prev.line > current.line) ? prev : current
+      })
+      const arb = (1 / opp.line) + (1 / awayOpp.line)
+      if (arb > 1) {
+        gameObject = {
+          "home": opp,
+          "away": awayOpp,
+          "arb": false,
+          "spread": true
+        }
+      }
+      else {
+        gameObject = {
+          "home": opp,
+          "away": awayOpp,
+          "arb": true,
+          "spread": true
+        }
+        if (bet == "spreads") {  
+          if (opp.spread+awayOpp.spread != 0) {
+            gameObject = {
+              "home": opp,
+              "away": awayOpp,
+              "arb": false,
+              "spread": false
+            }
+          }
+        }
+      }
+      // for testing purposes
+      // console.log(arb)
+      allGames.push(gameObject)
+      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 20) {
+        uploadToDB(gameObject);
+      }
+    }
+    // for testing purposes
+    // console.log(allGames)
+    setOdds([])
+    for (let i in allGames) {
+      setOdds((prevOdds) => {
+        const newState = [...prevOdds]
+        newState.push(allGames[i])
+        return newState
+      })
+    }
+    setArb(false)
+    for (let i in allGames) {
+      if (allGames[i].arb) {
+        setArb(current => !current)
+        break
+      }
+    }
+    setLoading(current => !current)
   }
 
   return (
@@ -208,7 +222,7 @@ export default function Odds() {
                   <img className="place-self-end" src={getLogo(x.away.name)} />
                   <p className="self-center place-self-center">{`bet $${(1000 / x.away.line).toFixed(2)} on ${x.away.book} for ${x.away.line}`}</p>
                 </div>
-                <p className="flex justify-center mt-4">{`$${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)} profit on a total bet of $${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)} for a risk-free ${(100 * (1000 - ((1000 / x.home.line) + (1000 / x.away.line))) / ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)}`}%</p>
+                <p className="flex justify-center mt-4">{`$${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)} profit on a total bet of $${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)} for a risk-free ${profitPercentage(x.home.line, x.away.line)}`}%</p>
               </div>
           })}
         </div>

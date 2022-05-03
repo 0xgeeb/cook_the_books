@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 // import data from "../utils/spreads.json"
-// import data from "../utils/decimal_ml_data.json"   `23QS
+// import data from "../utils/decimal_ml_data.json"
 import logos from "../utils/logos.json"
-import logo from ".././images/logo.png"
+import logo from ".././images/colored_logo.png"
 import axios from "axios";
 
 export default function Odds() {
@@ -147,13 +147,15 @@ export default function Odds() {
           }
         }
       }
+      // for testing purposes
+      // console.log(arb)
       allGames.push(gameObject)
-      // if (profitPercentage(gameObject.home.line, gameObject.away.line) > 1 && profitPercentage(gameObject.home.line, gameObject.away.line) < 2) {
-      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 0.5) {
+      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 20) {
         uploadToDB(gameObject);
       }
     }
-    console.log(allGames)
+    // for testing purposes
+    // console.log(allGames)
     setOdds([])
     for (let i in allGames) {
       setOdds((prevOdds) => {

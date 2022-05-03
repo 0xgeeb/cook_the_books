@@ -1,15 +1,15 @@
 import React from "react"
-import logo from ".././images/logo.png"
+import logo from ".././images/colored_logo.png"
 
 export default function Footer() {
     return (
         <footer className="bg-slate-200 h-24 absolute bottom-0 w-screen">
-            <div className="flex justify-between items-center">
-                <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center">
+                <div className="flex flex-row items-center ml-48">
                     <h4 className="text-3xl ml-4 mb-6 mt-6 font-rock">cook the books</h4>
-                    <img className="h-12 w-12" src={logo}/>
+                    <img className="h-12 w-12 mt-2 ml-2" src={logo}/>
                 </div>
-                <div className="flex justify-center items-center mr-72">
+                <div className="flex flex-row mt-3 ml-72 items-center">
                     <a href="https://twitter.com/0xgeeb" className="mr-6">
                       <svg
                         aria-hidden="true"
@@ -46,7 +46,6 @@ export default function Footer() {
                       </svg>
                     </a>
                 </div>
-                <div className="ml-12"></div>
             </div>
         </footer>
     )

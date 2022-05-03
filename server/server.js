@@ -18,7 +18,6 @@ app.use(cors());
 const dbUrl = process.env.ATLAS_URI;
 const apiKey = process.env.ODDS_APIKEY;
 
-
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -59,7 +58,7 @@ app.get('/minecraftspeedrun/bets', async (req, res) => {
 app.get('/minecraftspeedrun/recent', async (req, res) => {
   const response = await Game.find().sort({ _id: -1 }).limit(2);
   res.send(response);
-})
+});
 
 console.log("NODE_ENV is", process.env.NODE_ENV);
  
@@ -70,6 +69,6 @@ if (process.env.NODE_ENV === "production") {
   });
 } else {
   port = 3001;
-}
+};
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
