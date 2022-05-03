@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#background-div {
+  background-size: 100%;
+}
+
 .lds-spinner {
   color: official;
   display: inline-block;

@@ -6,9 +6,6 @@ module.exports = {
       extend: {
         fontFamily: {
           'rock': ['"Rock 3D"']
-        },
-        backgroundImage: {
-          'bets': "url('./images/background.jpg')"
         }
       }
     },

@@ -6,12 +6,11 @@ import Footer from "./components/Footer.jsx"
 import Home from "./pages/Home.jsx"
 import Odds from "./pages/Odds.jsx"
 import Test from "./pages/Test.jsx"
-import background from "./images/background.jpg"
 
 export default function App() {
     return (
         <Router>
-            <div className="flex flex-col relative min-w-screen min-h-screen m-0 p-0 overflow-x-hidden" style={{backgroundImage: `url(${background})`}}>
+            <div className="flex flex-col relative min-w-screen min-h-screen m-0 p-0 overflow-x-hidden">
                 <Nav />
                 <Routes>
                     <Route exact path="/" element={<Home />} />
