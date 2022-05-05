@@ -9,7 +9,7 @@ export default function Footer() {
                     <h4 className="text-3xl ml-4 mb-6 mt-6 font-rock">cook the books</h4>
                     <img className="h-12 w-12 mt-2 ml-2" src={logo}/>
                 </div>
-                <div className="flex flex-row mt-3 ml-72 items-center">
+                <div className="flex flex-row mt-3 ml-64 items-center">
                     <a href="https://twitter.com/0xgeeb" className="mr-6">
                       <svg
                         aria-hidden="true"

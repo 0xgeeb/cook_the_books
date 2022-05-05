@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import colored_logo from ".././images/colored_logo.png"
 import smoke2 from ".././images/resized_colored_smoke3.png"
+import flipped_smoke2 from ".././images/flipped_resized_colored_smoke3.png"
 import axios from "axios";
 
 export default function Home() {
@@ -47,12 +48,14 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {/* {recents.map((x) => {
-                return <div className="mb-40" key={x.home.id}>
-                    <h2 className="text-[80px]">{x.home.name}</h2>
-                    <h2 className="text-[80px]">{x.away.name}</h2>
-                </div>
-            })} */}
+            <div className="h-[1000px]" style={{backgroundImage: `url(${flipped_smoke2})`}} id="background-div">
+                {recents.map((x) => {
+                    return <div className="mb-40" key={x.home.id}>
+                        <h2 className="text-[80px]">{x.home.name}</h2>
+                        <h2 className="text-[80px]">{x.away.name}</h2>
+                    </div>
+                })}
+            </div>
         </div>
     )
 }

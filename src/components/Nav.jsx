@@ -17,7 +17,7 @@ export default function Nav() {
                         <a className="hover:text-gray-400" href="">Mint</a>
                     </li>
                     <li>
-                        <a className="hover:text-gray-400" href="">About</a>
+                        <a className="hover:text-gray-400" href="/test">test</a>
                     </li>
                 </ul>
                 <div className="flex justify-end ml-5">
