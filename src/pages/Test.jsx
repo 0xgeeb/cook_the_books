@@ -63,7 +63,6 @@ export default function Odds() {
   
   async function uploadToDB(gameObject) {
     await axios.post('/minecraftspeedrun/db', gameObject);
-    console.log('just uploaded to database on god');
   }
 
   async function fetchOdds() {
@@ -211,9 +210,28 @@ export default function Odds() {
         {odds.length < 1 && <div className="mb-24"></div>}
         <div className="bg-white mt-12 ml-12 mr-12 mb-24">
           {arb && <h1 className="flex justify-center text-3xl mb-5">games with an arb</h1>}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4 border-cyan-200 border-2 bg-neutral-200 rounded p-5">
             {odds.map((x) => {
-              return Card(x);
+              // return Card(x);
+              return (
+                <div className="h-96 bg-navy flex flex-col justify-items-center" key={x.home.id}>
+                  <h2 className="mx-auto text-lg">{profitPercentage(x.home.line, x.away.line)}% Return</h2>
+                  <div className="grid grid-cols-2 gap-2 m-2">
+                    <div className="border-neutral-600 rounded border-2">
+                      <img className="" src={getLogo(x.home.name)} />
+                      <p className="border-neutral-600 border-t-2 h-28 mt-0">bet on this team mf</p>
+                    </div>
+                    <div className="border-neutral-600 rounded border-2">
+                      <div className="h-24" id="card-image-shadow">
+                        <img className="pt-4 mx-auto" src={getLogo(x.away.name)} />
+                      </div>
+                      <div>
+                        <p className="border-neutral-600 border-t-2 h-28 mt-0">bet on this team mf</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
             })}
           </div>
         </div>

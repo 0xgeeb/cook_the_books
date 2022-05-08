@@ -17,15 +17,11 @@ export default function Card(x) {
   }
 
   return (
-    <div className="flex flex-col items-center border-2 border-cyan-400 rounded pb-4" key={x.home.id}>
-      <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
-      <div className="grid grid-cols-2">
-        <img className="place-self-end" src={getLogo(x.home.name)} />
-        <p className="self-center place-self-center">{`bet $${(1000 / x.home.line).toFixed(2)} on ${x.home.book} for ${x.home.line}`}</p>
-        <img className="place-self-end" src={getLogo(x.away.name)} />
-        <p className="self-center place-self-center">{`bet $${(1000 / x.away.line).toFixed(2)} on ${x.away.book} for ${x.away.line}`}</p>
+    <div className="h-48 w-48 border-neutral-600 rounded border-2 flex flex-col">
+      <div className="grid grid-cols-2 m-2">
+        <img src={getLogo(x.home.name)} />
+        <img src={getLogo(x.away.name)} />
       </div>
-      <p className="flex justify-center mt-4">{`$${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)} profit on a total bet of $${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)} for a risk-free ${profitPercentage(x.home.line, x.away.line)}`}%</p>
     </div>
   )
 }
