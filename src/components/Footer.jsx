@@ -10,7 +10,7 @@ export default function Footer() {
                     <img className="h-12 w-12 mt-2 ml-2" src={logo}/>
                 </div>
                 <div className="flex flex-row mt-3 ml-64 items-center">
-                    <a href="https://twitter.com/0xgeeb" className="mr-6">
+                    <a href="https://twitter.com/0xgeeb" rel="noopener noreferrer" target="_blank" className="mr-6">
                       <svg
                         aria-hidden="true"
                         focusable="false"
@@ -28,7 +28,7 @@ export default function Footer() {
                       </svg>
                     </a>
                     <span className="text-gray-800 mr-6">&#169;2022 0xgeeb</span>
-                    <a href="https://github.com/0xgeeb/cook_the_books" className="">
+                    <a href="https://github.com/0xgeeb" rel="noopener noreferrer" target="_blank">
                       <svg
                         aria-hidden="true"
                         focusable="false"

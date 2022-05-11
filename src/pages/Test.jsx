@@ -176,8 +176,9 @@ export default function Odds() {
   }
 
   return (
-    <div className="" style={{backgroundImage: `url(${smoke2})`}} id="background-div">
-      <div className="w-1/4 bg-neutral-200 border-neutral-600 rounded border-2 flex flex-col justify-center mt-24 mb-96 mx-auto" id="home-button">
+    <div>
+    {/* <div className="" style={{backgroundImage: `url(${smoke2})`}} id="background-div"> */}
+      <div className="w-1/3 bg-neutral-200 border-neutral-600 rounded border-2 flex flex-col justify-center mt-24 mb-96 mx-auto" id="home-button">
         <form onSubmit={handleSubmit}>
           <div className="flex justify-center mb-12">
             <div className="grid grid-cols-2 gap-4">
@@ -207,34 +208,26 @@ export default function Odds() {
         </form>
       </div>
         {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
-        {odds.length < 1 && <div className="mb-24"></div>}
-        <div className="bg-white mt-12 ml-12 mr-12 mb-24">
-          {arb && <h1 className="flex justify-center text-3xl mb-5">games with an arb</h1>}
-          <div className="grid grid-cols-2 gap-4 border-cyan-200 border-2 bg-neutral-200 rounded p-5">
+          {arb && <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with Arbitrage Opportunities</h1>}
+          <div className="bg-[#F7F7F7] w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden">
             {odds.map((x) => {
               // return Card(x);
               return (
-                <div className="h-96 bg-navy flex flex-col justify-items-center" key={x.home.id}>
-                  <h2 className="mx-auto text-lg">{profitPercentage(x.home.line, x.away.line)}% Return</h2>
-                  <div className="grid grid-cols-2 gap-2 m-2">
-                    <div className="border-neutral-600 rounded border-2">
-                      <img className="" src={getLogo(x.home.name)} />
-                      <p className="border-neutral-600 border-t-2 h-28 mt-0">bet on this team mf</p>
-                    </div>
-                    <div className="border-neutral-600 rounded border-2">
-                      <div className="h-24" id="card-image-shadow">
-                        <img className="pt-4 mx-auto" src={getLogo(x.away.name)} />
-                      </div>
-                      <div>
-                        <p className="border-neutral-600 border-t-2 h-28 mt-0">bet on this team mf</p>
-                      </div>
-                    </div>
+                <div className="h-[400px] w-[550px] flex flex-col shrink-0 mb-96 mr-10 ml-2 mt-2 rounded" key={x.home.id} id="card-div-shadow">
+                  <h2 className="mx-auto text-2xl mt-5 border-b-2 border-gray-200 text-green-500"><b>{profitPercentage(x.home.line, x.away.line)}%</b> Return</h2>
+                  <div className="mx-auto h-32 w-5/6 flex flex-row justify-start items-center mb-5">
+                    <img className="" src={getLogo(x.home.name)} />
+                    <p className="ml-10 w-[300px]">bet <b>${(1000 / x.home.line).toFixed(2)}</b> on the {x.home.name} on {x.home.book} for <b>{x.home.line}</b></p>
                   </div>
+                  <div className="mx-auto h-32 w-5/6 flex flex-row justify-start items-center border-t-2 border-gray-200">
+                    <img className="" src={getLogo(x.away.name)} />
+                    <p className="ml-10 w-[300px]">bet <b>${(1000 / x.away.line).toFixed(2)}</b> on the {x.away.name} on {x.away.book} for <b>{x.away.line}</b></p>
+                  </div>
+                  <h2 className="mx-auto text-lg mt-2 mb-5 border-b-2 border-gray-200"><b>${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)}</b> profit on a total bet of <b>${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)}</b></h2>
                 </div>
               )
             })}
           </div>
-        </div>
         <div className="m-12">
           { arbNoSpread() && <h1 className="flex justify-center text-3xl mb-5">games with arb but potential loss due to spread diff.</h1>}
           <div className="grid grid-cols-3 gap-4">
@@ -273,6 +266,7 @@ export default function Odds() {
             })}
           </div>
         </div>
+    {/* </div> */}
     </div>
   )
 }
