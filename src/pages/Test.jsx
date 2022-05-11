@@ -5,6 +5,8 @@ import logos from "../utils/logos.json"
 import logo from ".././images/colored_logo.png"
 import smoke2 from ".././images/flip_smoke.png"
 import Card from "../components/Card.jsx";
+import NoArbCard from "../components/NoArbCard.jsx";
+import ArbNoSpreadCard from "../components/ArbNoSpreadCard";
 import axios from "axios";
 
 export default function Odds() {
@@ -27,6 +29,8 @@ export default function Odds() {
     }
     return "https://cdn.anime-pictures.net/previews/f59/f591ed67a9d7530d11e6b54865760063_sp.jpg"
   }
+
+  // const cards = 
 
   function arbNoSpread() {
     for(let i in odds) {
@@ -176,9 +180,8 @@ export default function Odds() {
   }
 
   return (
-    <div>
-    {/* <div className="" style={{backgroundImage: `url(${smoke2})`}} id="background-div"> */}
-      <div className="w-1/3 bg-neutral-200 border-neutral-600 rounded border-2 flex flex-col justify-center mt-24 mb-96 mx-auto" id="home-button">
+    <div className="min-h-screen" style={{backgroundImage: `url(${smoke2})`}} id="background-div">
+      <div className="w-1/3 bg-neutral-200 flex flex-col justify-center mt-24 mb-32 mx-auto" id="card-div-shadow">
         <form onSubmit={handleSubmit}>
           <div className="flex justify-center mb-12">
             <div className="grid grid-cols-2 gap-4">
@@ -198,75 +201,46 @@ export default function Odds() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-            <button
-              className="bg-slate-200 text-black hover:bg-black rounded-3xl hover:text-slate-200 p-4 border-4 border-cyan-400"
-            >
-              find arbs
+          <a className="flex justify-center" ><button className="ml-1 mr-4 py-1 px-3 mt-3 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button">
+            <div className="flex flex-row">
+                <span className="mt-1">find arbs</span>
+                <img className="ml-2" src={logo} height="30" width="30" />
+            </div>
             </button>
-          </div>
+          </a>
         </form>
       </div>
-        {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
-          {arb && <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with Arbitrage Opportunities</h1>}
-          <div className="bg-[#F7F7F7] w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden">
+      {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+      {arb && <div className="m-0 mb-24">
+          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with Arbitrage Opportunities</h1>
+          <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
             {odds.map((x) => {
-              // return Card(x);
-              return (
-                <div className="h-[400px] w-[550px] flex flex-col shrink-0 mb-96 mr-10 ml-2 mt-2 rounded" key={x.home.id} id="card-div-shadow">
-                  <h2 className="mx-auto text-2xl mt-5 border-b-2 border-gray-200 text-green-500"><b>{profitPercentage(x.home.line, x.away.line)}%</b> Return</h2>
-                  <div className="mx-auto h-32 w-5/6 flex flex-row justify-start items-center mb-5">
-                    <img className="" src={getLogo(x.home.name)} />
-                    <p className="ml-10 w-[300px]">bet <b>${(1000 / x.home.line).toFixed(2)}</b> on the {x.home.name} on {x.home.book} for <b>{x.home.line}</b></p>
-                  </div>
-                  <div className="mx-auto h-32 w-5/6 flex flex-row justify-start items-center border-t-2 border-gray-200">
-                    <img className="" src={getLogo(x.away.name)} />
-                    <p className="ml-10 w-[300px]">bet <b>${(1000 / x.away.line).toFixed(2)}</b> on the {x.away.name} on {x.away.book} for <b>{x.away.line}</b></p>
-                  </div>
-                  <h2 className="mx-auto text-lg mt-2 mb-5 border-b-2 border-gray-200"><b>${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)}</b> profit on a total bet of <b>${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)}</b></h2>
-                </div>
-              )
+              return Card(x);
             })}
           </div>
-        <div className="m-12">
-          { arbNoSpread() && <h1 className="flex justify-center text-3xl mb-5">games with arb but potential loss due to spread diff.</h1>}
-          <div className="grid grid-cols-3 gap-4">
+        </div>
+      }
+      {arbNoSpread() && <div className="m-0 mb-24">
+          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with an Arbitrage Opportunity but Spread Difference</h1>
+          <h3 className="w-5/6 mx-auto flex justify-start text-3xl mb-5">see <a href="/about"></a></h3>
+          <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
             {odds.map((x) => {
               return arbNoSpreadMap(x) &&
-                <div className="flex flex-col items-center border-2 border-yellow-400 rounded pb-2" key={x.away.id}>
-                  <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
-                  <div className="grid grid-cols-2">
-                    <img src={getLogo(x.home.name)} />
-                    <img src={getLogo(x.away.name)} />
-                    <span className="flex justify-center">{x.home.line}</span>
-                    <span className="flex justify-center">{x.away.line}</span>
-                    <p className="flex justify-center">{x.home.book}</p>
-                    <p className="flex justify-center">{x.away.book}</p>
-                  </div>
-                </div>
+                ArbNoSpreadCard(x);
             })}
           </div>
         </div>
-        <div className="m-12">
-          {noArbNoSpread() && <h1 className="flex justify-center text-3xl mb-5">games with no arb</h1>}
-          <div className="grid grid-cols-3 gap-4">
+      }
+      {noArbNoSpread() && <div className="mt-0 ml- mr-0 mb-24">
+          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with No Arbitrage Opportunities</h1>
+          <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
             {odds.map((x) => {
               return noArbNoSpreadMap(x) &&
-                <div className="flex flex-col items-center border-2 border-red-400 rounded pb-2" key={x.away.id}>
-                  <p className="mb-5 mt-2">{x.home.name} - {x.away.name}</p>
-                  <div className="grid grid-cols-2">
-                    <img src={getLogo(x.home.name)} />
-                    <img src={getLogo(x.away.name)} />
-                    <span className="flex justify-center">{x.home.line}</span>
-                    <span className="flex justify-center">{x.away.line}</span>
-                    <p className="flex justify-center">{x.home.book}</p>
-                    <p className="flex justify-center">{x.away.book}</p>
-                  </div>
-                </div>
+                NoArbCard(x);
             })}
           </div>
         </div>
-    {/* </div> */}
+      }
     </div>
   )
 }

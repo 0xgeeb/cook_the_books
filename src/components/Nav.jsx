@@ -6,8 +6,8 @@ export default function Nav() {
         <nav className="top-0 z-50 h-20 flex justify-center bg-[#F7F7F7]">
             <div className="flex w-5/6 items-center mx-auto fixed border-b-2 border-gray-200">
                 <a className="flex center-items pr-10" href="/">
-                    <img className="h-20" src={colored_logo}/>
-                    <span className="self-center text-2xl pl-2 font-bold w-72 ">Cook the Books</span>
+                    <img className="h-20 hover:opacity-25" src={colored_logo}/>
+                    <span className="self-center text-2xl pl-2 font-bold w-72 hover:text-gray-400">Cook the Books</span>
                 </a>
                 <ul className="flex space-x-8 w-3/4 justify-end pr-7 border-r-2 border-gray-400">
                     <li>
