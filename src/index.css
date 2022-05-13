@@ -32,6 +32,10 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+#arb-title {
+  text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+}
+
 .lds-spinner {
   color: official;
   display: inline-block;

@@ -18,7 +18,7 @@ export default function NoArbCard(x) {
 
   return (
     <div className="bg-[#F7F7F7] h-[400px] w-[550px] flex flex-col shrink-0 mb-96 mr-10 ml-2 mt-2 rounded" key={x.home.id} id="card-div-shadow">
-      <h2 className="mx-auto text-2xl mt-5 text-red-500">no return : &#40;</h2>
+      <h2 className="border-b-2 border-gray-200 mx-auto text-2xl mt-5 text-red-500">no return &#128542;</h2>
       <div className="mx-auto h-32 w-5/6 flex flex-row items-center mb-5">
         <img className="" src={getLogo(x.home.name)} />
         <p className="flex justify-center w-[300px]">{x.home.name}</p>
@@ -27,7 +27,8 @@ export default function NoArbCard(x) {
         <img className="" src={getLogo(x.away.name)} />
         <p className="flex justify-center w-[300px]">{x.away.name}</p>
       </div>
-      <h2 className="mx-auto text-lg mt-2 mb-5">no profit : &#40;</h2>
+      {/* <h2 className="mx-auto text-lg mt-2 mb-5">no profit : &#40;</h2> */}
+      <h2 className="border-b-2 border-gray-200 mx-auto text-lg mt-2 mb-5">would have been a <b>${-(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)}</b> loss</h2>
     </div>
     )
   }

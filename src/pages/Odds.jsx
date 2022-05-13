@@ -222,7 +222,7 @@ export default function Odds() {
                   <img className="place-self-end" src={getLogo(x.away.name)} />
                   <p className="self-center place-self-center">{`bet $${(1000 / x.away.line).toFixed(2)} on ${x.away.book} for ${x.away.line}`}</p>
                 </div>
-                <p className="flex justify-center mt-4">{` for a risk-free ${profitPercentage(x.home.line, x.away.line)}`}%</p>
+                <p className="flex justify-center mt-4">{`$${(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)} profit on a total bet of $${((1000 / x.home.line) + (1000 / x.away.line)).toFixed(2)} for a risk-free ${profitPercentage(x.home.line, x.away.line)}`}%</p>
               </div>
           })}
         </div>

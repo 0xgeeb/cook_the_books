@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-// import data from "../utils/spreads.json"
-import obj from "../utils/decimal_ml_data.json"
-import logos from "../utils/logos.json"
-import logo from ".././images/colored_logo.png"
-import smoke2 from ".././images/flip_smoke.png"
+import React, { useState } from "react";
+// import data from "../utils/spreads.json";
+// import obj from "../utils/decimal_ml_data.json";
+import logos from "../utils/logos.json";
+import logo from ".././images/colored_logo.png";
+import smoke2 from ".././images/flip_smoke.png";
 import Card from "../components/Card.jsx";
 import NoArbCard from "../components/NoArbCard.jsx";
 import ArbNoSpreadCard from "../components/ArbNoSpreadCard";
@@ -71,8 +71,8 @@ export default function Odds() {
 
   async function fetchOdds() {
     setLoading(current => !current)
-    // const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
-    // const obj = {...response.data}
+    const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
+    const obj = {...response.data}
     const allGames = []
     for (let game in obj) {
       let gameObject = {}
@@ -180,28 +180,27 @@ export default function Odds() {
   }
 
   return (
-    <div className="min-h-screen" style={{backgroundImage: `url(${smoke2})`}} id="background-div">
-      <div className="w-1/3 bg-neutral-200 flex flex-col justify-center mt-24 mb-32 mx-auto" id="card-div-shadow">
+    <div className="min-h-screen mb-10" style={{backgroundImage: `url(${smoke2})`}} id="background-div">
+      <h1 className="mx-auto">input data</h1>
+      <div className="p-10 w-1/3 bg-[#F7F7F7] flex flex-col justify-center mt-48 mb-48 mx-auto rounded" id="card-div-shadow">
         <form onSubmit={handleSubmit}>
-          <div className="flex justify-center mb-12">
+          <div className="grid grid-cols-2 gap-4">
+            <label className="place-self-center" htmlFor="sport">select a sport</label>
+            <label className="place-self-center" htmlFor="bet">ML or spreads?</label>
+            <select className="rounded" name="sport" id="sport" onChange={(e) => setSport(e.target.value)}>
+              <option></option>
+              <option value="basketball_nba">NBA</option>
+              <option value="icehockey_nhl">NHL</option>
+              <option value="baseball_mlb">MLB</option>
+            </select>
             <div className="grid grid-cols-2 gap-4">
-              <label className="place-self-center" htmlFor="sport">select a sport</label>
-              <label className="place-self-center" htmlFor="bet">ML or spreads?</label>
-              <select name="sport" id="sport" onChange={(e) => setSport(e.target.value)}>
-                <option></option>
-                <option value="basketball_nba">NBA</option>
-                <option value="icehockey_nhl">NHL</option>
-                <option value="baseball_mlb">MLB</option>
-              </select>
-              <div className="grid grid-cols-2 gap-4">
-                <input className="place-self-center" type="radio" id="h2h" name="betradio" onChange={(e) => setBet(e.target.id)} />
-                <input className="place-self-center" type="radio" id="spreads" name="betradio" onChange={(e) => setBet(e.target.id)} />
-                <label className="place-self-center" htmlFor="h2h">moneyline</label>
-                <label className="place-self-center" htmlFor="spreads">spreads</label>
-              </div>
+              <input className="place-self-center" type="radio" id="h2h" name="betradio" onChange={(e) => setBet(e.target.id)} />
+              <input className="place-self-center" type="radio" id="spreads" name="betradio" onChange={(e) => setBet(e.target.id)} />
+              <label className="place-self-center" htmlFor="h2h">moneyline</label>
+              <label className="place-self-center" htmlFor="spreads">spreads</label>
             </div>
           </div>
-          <a className="flex justify-center" ><button className="ml-1 mr-4 py-1 px-3 mt-3 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button">
+          <a className="flex justify-center" ><button className="ml-1 mr-4 py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button">
             <div className="flex flex-row">
                 <span className="mt-1">find arbs</span>
                 <img className="ml-2" src={logo} height="30" width="30" />
@@ -212,17 +211,18 @@ export default function Odds() {
       </div>
       {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       {arb && <div className="m-0 mb-24">
-          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with Arbitrage Opportunities</h1>
+          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5" id="arb-title">Games with Arbitrage Opportunities</h1>
           <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
             {odds.map((x) => {
-              return Card(x);
+              return x.arb &&
+                Card(x);
             })}
           </div>
         </div>
       }
       {arbNoSpread() && <div className="m-0 mb-24">
-          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with an Arbitrage Opportunity but Spread Difference</h1>
-          <h3 className="w-5/6 mx-auto flex justify-start text-3xl mb-5">see <a href="/about"></a></h3>
+          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5" id="arb-title">Games with an Arbitrage Opportunity but Spread Difference</h1>
+          <h3 className="w-5/6 mx-auto flex justify-start text-3xl mb-5">see<a href="/about"> about</a></h3>
           <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
             {odds.map((x) => {
               return arbNoSpreadMap(x) &&
@@ -231,8 +231,8 @@ export default function Odds() {
           </div>
         </div>
       }
-      {noArbNoSpread() && <div className="mt-0 ml- mr-0 mb-24">
-          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5">Games with No Arbitrage Opportunities</h1>
+      {noArbNoSpread() && <div className="m-0 mb-24">
+          <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5" id="arb-title">Games with No Arbitrage Opportunities</h1>
           <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
             {odds.map((x) => {
               return noArbNoSpreadMap(x) &&

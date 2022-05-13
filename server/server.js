@@ -56,7 +56,7 @@ app.get('/minecraftspeedrun/bets', async (req, res) => {
 });
 
 app.get('/minecraftspeedrun/recent', async (req, res) => {
-  const response = await Game.find().sort({ _id: -1 }).limit(2);
+  const response = await Game.find().sort({ _id: -1 }).limit(4);
   res.send(response);
 });
 
