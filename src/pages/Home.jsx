@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import colored_logo from ".././images/colored_logo.png"
-import smoke2 from ".././images/resized_colored_smoke3.png"
-import flipped_smoke2 from ".././images/flipped_resized_colored_smoke3.png"
 import home_image from ".././images/home_image.png";
-import Card from "../components/Card.jsx";
+import HomeCard from "../components/HomeCard.jsx";
 import axios from "axios";
 
 export default function Home() {
@@ -21,10 +19,10 @@ export default function Home() {
     useEffect(() => {
       async function fetchRecents() {
         try {
-            const response = await axios.get('/minecraftspeedrun/recent');
-            const data = response.data;
-            console.log(data);
             if (componentIsMounted.current) {
+                const response = await axios.get('/minecraftspeedrun/recent');
+                const data = response.data;
+                console.log(data);
                 setRecents(data);
 
             }
@@ -53,7 +51,7 @@ export default function Home() {
                     <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5" id="arb-title">Recent Arbitrage Opportunities found by CtB</h1>
                     <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
                         {recents.map((x) => {
-                            return Card(x);
+                            return HomeCard(x);
                         })}
                     </div>
                 </div>
