@@ -1,4 +1,6 @@
 /testing
 /node_modules
 /build
+/artifacts
+/cache
 .env
