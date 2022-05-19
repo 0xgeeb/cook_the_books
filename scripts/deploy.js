@@ -1,5 +1,5 @@
 const main = async () => {
-  const nftContractFactory = await hre.ethers.getContractFactory("CTBPass");
+  const nftContractFactory = await hre.ethers.getContractFactory("CTBPass_svg");
   const nftContract = await nftContractFactory.deploy();
   await nftContract.deployed();
   console.log("contract was deployed to:", nftContract.address);
@@ -9,6 +9,10 @@ const main = async () => {
   console.log("minted nft 1");
   txn = await nftContract.mintTheMFPass();
   await txn.wait("minted nft 2");
+  console.log("minted nft 2");
+  txn = await nftContract.mintTheMFPass();
+  await txn.wait("minted nft 3");
+  console.log("minted nft 3");
 };
 
 const runMain = async () => {

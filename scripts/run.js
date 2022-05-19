@@ -9,6 +9,10 @@ const main = async () => {
   console.log("minted nft 1");
   txn = await nftContract.mintTheMFPass();
   await txn.wait("minted nft 2");
+  console.log("minted nft 2");
+  txn = await nftContract.mintTheMFPass();
+  await txn.wait("minted nft 3");
+  console.log("minted nft 3");
 };
 
 const runMain = async () => {

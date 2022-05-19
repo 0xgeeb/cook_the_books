@@ -22,12 +22,16 @@ module.exports = {
       gasPrice: 225000000000,
       chainId: 43113,
       accounts: [process.env.FUJI_PRIVATE_KEY]
-    }
+    },
+    rinkeby: {
+      url: process.env.ALCHEMY_API_KEY_URL,
+      accounts: [process.env.RINKEBY_PRIVATE_KEY]
+    },
     // mainnet: {
     //   url: 'https://api.avax.network/ext/bc/C/rpc',
     //   gasPrice: 225000000000,
     //   chainId: 43114,
-    //   accounts: [],
+    //   accounts: [process.env.FUJI_PRIVATE_KEY]
     // },
   }
 };
