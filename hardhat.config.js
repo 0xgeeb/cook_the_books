@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("hardhat-gas-reporter");
 require('dotenv').config({path: ".env"});
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -33,5 +34,9 @@ module.exports = {
     //   chainId: 43114,
     //   accounts: [process.env.FUJI_PRIVATE_KEY]
     // },
+  },
+  gasReporter: {
+    token: 'AVAX',
+    gasPriceApi: `https://api.snowtrace.io/api?module=proxy&action=eth_gasPrice&apiKey=${process.env.SNOWTRACE_APIKEY}`
   }
 };
