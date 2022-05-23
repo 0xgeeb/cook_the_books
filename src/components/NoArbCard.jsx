@@ -3,6 +3,11 @@ import logos from "../utils/logos.json"
 
 export default function NoArbCard(x) {
 
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+
   function getLogo(team) {
     for (let i in logos) {
       if (team == logos[i].team) {
@@ -12,8 +17,9 @@ export default function NoArbCard(x) {
     return "https://cdn.anime-pictures.net/previews/f59/f591ed67a9d7530d11e6b54865760063_sp.jpg"
   }
 
-  function profitPercentage(homeLine, awayLine) {
-    return (100 * (1000 - ((1000 / homeLine) + (1000 / awayLine))) / ((1000 / homeLine) + (1000 / awayLine))).toFixed(2)
+  function lossAmount(homeLine, awayLine) {
+    let loss = formatter.format(-(1000 - ((1000 / homeLine) + (1000 / awayLine))));
+    return loss;
   }
 
   return (
@@ -27,7 +33,7 @@ export default function NoArbCard(x) {
         <img className="" src={getLogo(x.away.name)} />
         <p className="flex justify-center w-[400px]">{x.away.name}</p>
       </div>
-      <h2 className="border-b-2 border-gray-200 mx-auto text-lg mt-2 mb-5">would have been a <b>${-(1000 - ((1000 / x.home.line) + (1000 / x.away.line))).toFixed(2)}</b> loss</h2>
+      <h2 className="border-b-2 border-gray-200 mx-auto text-lg mt-2 mb-5">would have been a <b>{lossAmount(x.home.line, x.away.line)}</b> loss</h2>
     </div>
-    )
-  }
+  )
+}

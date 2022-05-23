@@ -1,7 +1,7 @@
 import React from "react";
 import logos from "../utils/logos.json"
 
-export default function Card(x) {
+export default function HomeCard(x) {
 
   function getLogo(team) {
     for (let i in logos) {

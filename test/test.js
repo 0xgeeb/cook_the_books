@@ -1,19 +1,26 @@
 const { expect } = require("chai");
 
-describe("CTBPass_svg", function () {
-  it("should return the right name and test the gas fee", async function () {
-    const nftContractFactory = await hre.ethers.getContractFactory("CTBPass");
-    const nftContract = await nftContractFactory.deploy();
-    await nftContract.deployed();
-    let txn = await nftContract.mintTheMFPass();
+describe("CTBPass", function () {
+  it("deploy the contract", async function () {
+    const passContractFactory = await hre.ethers.getContractFactory("CTBPass");
+    const passContract = await passContractFactory.deploy();
+    await passContract.deployed();
+    let txn = await passContract.mintTheMFPass();
     await txn.wait();
-    console.log("minted nft 1");
-    txn = await nftContract.mintTheMFPass();
-    await txn.wait("minted nft 2");
-    console.log("minted nft 2");
-    txn = await nftContract.mintTheMFPass();
-    await txn.wait("minted nft 3");
-    console.log("minted nft 3");
-    expect(await nftContract.name()).to.equal("Cook the Books Pass - test2");
+    expect(await passContract.name()).to.equal("Cook the Books Pass - test2");
   });
+  it("mint nft 1", async function () {
+    expect(await passContract.mintTheMFPass(1)).to.emit(
+      passContract,
+      "NewPassMinted"
+    );
+  });
+  // it("mint nft 2", async function () {
+  //   txn = await passContract.mintTheMFPass();
+  //   await txn.wait("minted nft 2");
+  // });
+  // it("mint nft 3", async function () {
+  //   txn = await passContract.mintTheMFPass();
+  //   await txn.wait("minted nft 3");
+  // });
 });

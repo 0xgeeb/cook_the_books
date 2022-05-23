@@ -14,7 +14,7 @@ export default function Nav() {
                         <a className="hover:text-gray-400" href="/">Home</a>
                     </li>
                     <li>
-                        <a className="hover:text-gray-400" href="">Mint</a>
+                        <a className="hover:text-gray-400" href="/mint">Mint</a>
                     </li>
                     <li>
                         <a className="hover:text-gray-400" href="/test">test</a>

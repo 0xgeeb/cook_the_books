@@ -5,6 +5,7 @@ import Nav from "./components/Nav.jsx"
 import Footer from "./components/Footer.jsx"
 import Home from "./pages/Home.jsx"
 import Odds from "./pages/Odds.jsx"
+import Mint from "./pages/Mint.jsx"
 import Test from "./pages/Test.jsx"
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/odds" element={<Odds />} />
+                    <Route path="/mint" element={<Mint />} />
                     <Route path="/test" element={<Test />} />
                 </Routes>
                 <Footer />
