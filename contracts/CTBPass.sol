@@ -1153,7 +1153,7 @@ contract CTBPass is ERC721URIStorage, Ownable {
 
   event NewPassMinted(address sender, uint256 tokenId);
 
-  constructor() ERC721 ("Cook the Books Pass - test2", "CTBP") {
+  constructor() ERC721 ("Cook the Books Pass - test3", "CTBP") {
     _tokenIds.increment();
   }
 
@@ -1164,7 +1164,7 @@ contract CTBPass is ERC721URIStorage, Ownable {
       _ogPassMint(newTokenId);
     }
     else {
-      require(msg.value > 10, "pay for nonog");
+      require(msg.value >= 1000000000000000000, "pay for nonog");
       _passMint(newTokenId);
     }
     emit NewPassMinted(msg.sender, newTokenId);

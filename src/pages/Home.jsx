@@ -7,29 +7,13 @@ import axios from "axios";
 export default function Home() {
 
     const [recents, setRecents] = useState([]);
-    const componentIsMounted = useRef(true);
 
     useEffect(() => {
-        // each useEffect can return a cleanup function
-        return () => {
-        componentIsMounted.current = false;
-        };
-    }, []); // no extra deps => the cleanup function run this on component unmount
-
-    useEffect(() => {
-      async function fetchRecents() {
-        try {
-            if (componentIsMounted.current) {
-                const response = await axios.get('/minecraftspeedrun/recent');
-                const data = response.data;
-                console.log(data);
-                setRecents(data);
-
-            }
-        } catch (err) {
-            console.error(err);
+        async function fetchRecents() {
+            const response = await axios.get('/minecraftspeedrun/recent');
+            const data = response.data;
+            setRecents(data);
         }
-      }
       fetchRecents();
     }, []);
 
@@ -47,7 +31,7 @@ export default function Home() {
                         </button>
                     </a>
                 </div>
-                <div className="mt-[600px]">
+                <div className="mt-[630px]">
                     <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5" id="arb-title">Recent Arbitrage Opportunities found by CtB</h1>
                     <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
                         {recents.map((x) => {

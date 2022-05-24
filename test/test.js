@@ -1,26 +1,58 @@
-const { expect } = require("chai");
+const { assert } = require("chai");
+const { ethers } = require("hardhat");
 
-describe("CTBPass", function () {
-  it("deploy the contract", async function () {
-    const passContractFactory = await hre.ethers.getContractFactory("CTBPass");
-    const passContract = await passContractFactory.deploy();
-    await passContract.deployed();
-    let txn = await passContract.mintTheMFPass();
-    await txn.wait();
-    expect(await passContract.name()).to.equal("Cook the Books Pass - test2");
+describe("CTBPass", async () => {
+
+  let pass;
+  let passContractAddress;
+  let tokenId;
+
+  beforeEach('deploy contract', async() => {
+    const CTBPass = await ethers.getContractFactory("CTBPass");
+    pass = await CTBPass.deploy();
+    await pass.deployed();
+    passContractAddress = pass.address;
   });
-  it("mint nft 1", async function () {
-    expect(await passContract.mintTheMFPass(1)).to.emit(
-      passContract,
-      "NewPassMinted"
-    );
+
+  it('should have an address', async () => {
+    assert.notEqual(passContractAddress, 0x0);
+		assert.notEqual(passContractAddress, '');
+		assert.notEqual(passContractAddress, null);
+		assert.notEqual(passContractAddress, undefined);
   });
-  // it("mint nft 2", async function () {
-  //   txn = await passContract.mintTheMFPass();
-  //   await txn.wait("minted nft 2");
-  // });
-  // it("mint nft 3", async function () {
-  //   txn = await passContract.mintTheMFPass();
-  //   await txn.wait("minted nft 3");
-  // });
+
+  it('should have a name', async () => {
+    const name = await pass.name();
+    assert.equal(name, 'Cook the Books Pass - test3');
+  });
+
+	it('should be able to mint NFTs', async () => {
+
+		let txn = await pass.mintTheMFPass()
+		let tx = await txn.wait()
+		let event = tx.events[0]
+		let value = event.args[2]
+		tokenId = value.toNumber()
+		assert.equal(tokenId, 1)
+
+		txn = await pass.mintTheMFPass()
+		tx = await txn.wait()
+		event = tx.events[0]
+		value = event.args[2]
+		tokenId = value.toNumber()
+		assert.equal(tokenId, 2)
+
+    let overrides = {
+      value: ethers.utils.parseEther((1).toString())
+    };
+
+    txn = await pass.mintTheMFPass(overrides)
+		tx = await txn.wait()
+		event = tx.events[0]
+		value = event.args[2]
+		tokenId = value.toNumber()
+		assert.equal(tokenId, 3)
+	})
+
+
 });
