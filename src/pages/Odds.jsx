@@ -213,7 +213,7 @@ export default function Odds() {
       }
       {arbNoSpread() && <div className="m-0 mb-24">
           <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold" id="arb-title">Games with an Arbitrage Opportunity but Spread Difference</h1>
-          <div className="w-5/6 bg-[#F7F7F7] mx-auto mt-2 flex flex-row justify-start items-center">
+          <div className="w-5/6 mx-auto mt-2 flex flex-row justify-start items-center">
             <h3 className="text-3xl ml-5 mr-2 mb-1">see </h3>
             <a className="flex justify-center" >
               <button className="ml-1 mr-4 py-1 px-3 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button">
