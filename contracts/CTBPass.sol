@@ -1151,13 +1151,15 @@ contract CTBPass is ERC721URIStorage, Ownable {
   uint256 public constant MINT_LIMIT = 10;
   uint256 public constant OG_LIMIT = 2;
 
+  mapping(address => uint256) public nftHolders;
+
   event NewPassMinted(address sender, uint256 tokenId);
 
-  constructor() ERC721 ("Cook the Books Pass - test3", "CTBP") {
+  constructor() ERC721 ("Cook the Books Pass - test4", "CTBP") {
     _tokenIds.increment();
   }
 
-  function mintTheMFPass() public payable {
+  function mintThePass() public payable {
     uint256 newTokenId = _tokenIds.current();
     require(newTokenId <= MINT_LIMIT, "passes are sold out sorry bro");
     if (newTokenId <= OG_LIMIT) {
@@ -1167,6 +1169,7 @@ contract CTBPass is ERC721URIStorage, Ownable {
       require(msg.value >= 1000000000000000000, "pay for nonog");
       _passMint(newTokenId);
     }
+    nftHolders[msg.sender] = newTokenId;
     emit NewPassMinted(msg.sender, newTokenId);
     _tokenIds.increment();
   }
@@ -1183,4 +1186,17 @@ contract CTBPass is ERC721URIStorage, Ownable {
     _setTokenURI(tokenId_, ipfsJson);
   }
 
+  function checkMembershipStatus() public view returns (uint8 possession)  {
+    uint256 userTokenId = nftHolders[msg.sender];
+    if (userTokenId > 0) {
+      return 1;
+    }
+    else {
+      return 2;
+    }
+  }
+
+  function withdraw() external onlyOwner {
+    payable(msg.sender).transfer(address(this).balance);
+  }
 }

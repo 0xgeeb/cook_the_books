@@ -1,21 +1,22 @@
 const main = async () => {
-  const nftContractFactory = await hre.ethers.getContractFactory("CTBPass");
-  const nftContract = await nftContractFactory.deploy();
-  await nftContract.deployed();
-  console.log("contract was deployed to:", nftContract.address);
+  const CTBPass = await hre.ethers.getContractFactory("CTBPass");
+  const passContract = await CTBPass.deploy();
+  await passContract.deployed();
+  console.log("contract was deployed to:", passContract.address);
 
-  // let txn = await nftContract.mintTheMFPass();
+  // let txn = await nftContract.mintThePass();
   // await txn.wait();
   // console.log("minted nft 1");
-  // txn = await nftContract.mintTheMFPass();
+  // txn = await nftContract.mintThePass();
   // await txn.wait("minted nft 2");
   // console.log("minted nft 2");
   // let overrides = {
   //   value: ethers.utils.parseEther((1).toString())
   // };
-  // txn = await nftContract.mintTheMFPass(overrides);
+  // txn = await nftContract.mintThePass(overrides);
   // await txn.wait("minted nft 3");
   // console.log("minted nft 3");
+
 };
 
 const runMain = async () => {

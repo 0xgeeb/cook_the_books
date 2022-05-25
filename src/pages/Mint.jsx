@@ -25,7 +25,7 @@ export default function Mint() {
     blockExplorerUrls: ['https://testnet.snowtrace.io/']
   };
 
-  const CONTRACT_ADDRESS = "0x8880Ee7EF20ccBdB2088e4aC85FBB6C652C3822f";
+  const CONTRACT_ADDRESS = "0x8c9eA819aC469619F4acABa01F7F2270E8ABC5D1";
 
   const mmInstance = new MetaMaskOnboarding();
 
@@ -57,7 +57,7 @@ export default function Mint() {
     };
     setLoading(current => !current);
     try {
-      const mintTxn = await passContract.mintTheMFPass(overrides);
+      const mintTxn = await passContract.mintThePass(overrides);
       await mintTxn.wait();
       setLoading(current => !current);
     }
