@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from "react"
+import { React, useState, useEffect } from "react"
 import colored_logo from ".././images/colored_logo.png"
 import home_image from ".././images/home_image.png";
 import HomeCard from "../components/HomeCard.jsx";
+import Pass from ".././images/ctb_pass.png";
+import OGPass from ".././images/ctb_og_pass.png";
 import axios from "axios";
 
 export default function Home() {
@@ -31,12 +33,19 @@ export default function Home() {
                         </button>
                     </a>
                 </div>
-                <div className="mt-[630px]">
-                    <h1 className="w-5/6 mx-auto flex justify-start text-3xl font-bold mb-5" id="arb-title">Recent Arbitrage Opportunities found by CtB</h1>
+                <div className="mt-[620px]">
+                    <h1 className="w-5/6 mx-auto flex justify-center text-3xl font-bold mb-5" id="arb-title">Recent Arbitrage Opportunities found by CTB</h1>
                     <div className="w-5/6 h-[450px] mx-auto flex overflow-x-auto overflow-y-hidden" id="hide-scrollbar">
                         {recents.map((x) => {
                             return HomeCard(x);
                         })}
+                    </div>
+                </div>
+                <div className="w-5/6 mx-auto mt-24 flex flex-col">
+                    <h1 className="text-3xl mx-auto font-bold mb-5" id="arb-title">Mint one of the NFTs to gain access to CTB</h1>
+                    <div className="flex flex-row justify-center">
+                        <img className="h-[490px] mr-48" src={OGPass} />
+                        <img className="h-[490px]" src={Pass} />
                     </div>
                 </div>
             </div>

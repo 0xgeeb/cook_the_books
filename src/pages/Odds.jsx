@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 // import data from "../utils/spreads.json";
 // import obj from "../utils/decimal_ml_data.json";
 import logo from ".././images/colored_logo.png";
 import smoke2 from ".././images/flip_smoke.png";
 import Card from "../components/Card.jsx";
 import NoArbCard from "../components/NoArbCard.jsx";
-import ArbNoSpreadCard from "../components/ArbNoSpreadCard";
+import ArbNoSpreadCard from "../components/ArbNoSpreadCard.jsx";
 import axios from "axios";
 
 export default function Odds() {
@@ -50,7 +50,12 @@ export default function Odds() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetchOdds();
+    if(!sport || !bet) {
+
+    }
+    else {
+      fetchOdds();
+    }
   }
   
   async function uploadToDB(gameObject) {

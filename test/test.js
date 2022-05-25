@@ -52,7 +52,7 @@ describe("CTBPass", async () => {
 		value = event.args[2]
 		tokenId = value.toNumber()
 		assert.equal(tokenId, 3)
-	})
+	});
 
 
 });

@@ -6,7 +6,7 @@ import Footer from "./components/Footer.jsx"
 import Home from "./pages/Home.jsx"
 import Odds from "./pages/Odds.jsx"
 import Mint from "./pages/Mint.jsx"
-import Test from "./pages/Test.jsx"
+import About from "./pages/About.jsx"
 
 export default function App() {
     return (
@@ -17,7 +17,7 @@ export default function App() {
                     <Route exact path="/" element={<Home />} />
                     <Route path="/odds" element={<Odds />} />
                     <Route path="/mint" element={<Mint />} />
-                    <Route path="/test" element={<Test />} />
+                    <Route path="/about" element={<About />} />
                 </Routes>
                 <Footer />
             </div>
