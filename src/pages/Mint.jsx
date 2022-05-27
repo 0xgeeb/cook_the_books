@@ -6,12 +6,15 @@ import smoke2 from ".././images/flip_smoke.png";
 import logo from ".././images/colored_logo.png";
 import AvaxLogo from ".././images/avax_logo.png";
 import CTBPassABI from "../utils/CTBPass.json";
+import Pass from ".././images/ctb_pass.png";
+import OGPass from ".././images/ctb_og_pass.png";
 
 export default function Mint() {
 
   const [currentAccount, setCurrentAccount] = useState(null);
   const [avaxChain, setAvaxChain] = useState(null);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
 
   const AVALANCHE_TESTNET_PARAMS = {
     chainId: '0xA869',
@@ -25,7 +28,7 @@ export default function Mint() {
     blockExplorerUrls: ['https://testnet.snowtrace.io/']
   };
 
-  const CONTRACT_ADDRESS = "0x8c9eA819aC469619F4acABa01F7F2270E8ABC5D1";
+  const CONTRACT_ADDRESS = "0x9BF4C0F67Ab65996E15889B493eCb23a9153e31a";
 
   const mmInstance = new MetaMaskOnboarding();
 
@@ -41,7 +44,15 @@ export default function Mint() {
     const { chainId } = await provider.getNetwork();
     if (chainId === 43113) {
       setAvaxChain(chainId);
-    }
+    };
+    const signer = provider.getSigner();
+    const passContract = new ethers.Contract(
+      CONTRACT_ADDRESS,
+      CTBPassABI.abi,
+      signer
+      );
+    const checkIdTxn = await passContract.checkTokenId();
+    setCurrentId(parseInt(checkIdTxn._hex, 16) - 1);
   };
 
   async function interactMintFunction() {
@@ -51,18 +62,30 @@ export default function Mint() {
       CONTRACT_ADDRESS,
       CTBPassABI.abi,
       signer
-      );
-    let overrides = {
-      value: ethers.utils.parseEther((1).toString())
-    };
+    );
     setLoading(current => !current);
-    try {
-      const mintTxn = await passContract.mintThePass(overrides);
-      await mintTxn.wait();
-      setLoading(current => !current);
+    if (currentId >= 2) {
+      let overrides = {
+        value: ethers.utils.parseEther((1).toString())
+      };
+      try {
+        const mintTxn = await passContract.mintThePass(overrides);
+        await mintTxn.wait();
+        setLoading(current => !current);
+      }
+      catch {
+        setLoading(current => !current);
+      }
     }
-    catch {
-      setLoading(current => !current);
+    else {
+      try {
+        const mintTxn = await passContract.mintThePass();
+        await mintTxn.wait();
+        setLoading(current => !current);
+      }
+      catch {
+        setLoading(current => !current);
+      }
     }
   };
 
@@ -102,7 +125,9 @@ export default function Mint() {
     }
     else {
       return  <div className="flex flex-col justify-center" >
-                <div className="mx-auto">placeholder for nft info possibly</div>
+                <div className="mx-auto">{currentId} / 10,000 CTB Passes have been minted</div>
+                {currentId < 1000 && <div className="mx-auto">{1000 - currentId} OG Passes are available to be minted</div>}
+                {currentId >= 1000 && <div className="mx-auto">sorry there are no more OG passes left</div>}
                 <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={interactMintFunction}>
                   <div className="flex flex-row items-center">
                     <span className="">mint pass</span>
@@ -121,6 +146,13 @@ export default function Mint() {
       </div>
       <div className="flex justify-center mt-6">
         {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+      </div>
+      <div className="w-5/6 mx-auto mt-[600px] mb-24 flex flex-col">
+        <h1 className="text-3xl mx-auto font-bold mb-5" id="arb-title">Mint one of the NFTs to gain access to CTB</h1>
+        <div className="flex flex-row justify-center">
+          <img className="h-[490px] mr-48" src={OGPass} />
+          <img className="h-[490px]" src={Pass} />
+        </div>
       </div>
     </div>
   )

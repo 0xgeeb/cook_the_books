@@ -23,7 +23,7 @@ describe("CTBPass", async () => {
 
   it('should have a name', async () => {
     const name = await pass.name()
-    assert.equal(name, 'Cook the Books Pass - test4')
+    assert.equal(name, 'Cook the Books Pass - test5')
   });
 
 	it('should be able to mint 2 og passes', async () => {
@@ -99,9 +99,24 @@ describe("CTBPass", async () => {
 		value = event.args[2]
 		tokenId = value.toNumber()
 		let txnx = await pass.withdraw()
-		console.log(txnx)
 		const provider = waffle.provider;
 		const balance = await provider.getBalance(pass.address);
 		assert.equal(balance, 0)
+	});
+
+	it('should be able to check current token id', async () => {
+		let txn = await pass.mintThePass()
+		let tx = await txn.wait()
+		let event = tx.events[0]
+		let value = event.args[2]
+		tokenId = value.toNumber()
+
+		txn = await pass.mintThePass()
+		tx = await txn.wait()
+		event = tx.events[0]
+		value = event.args[2]
+		tokenId = value.toNumber()
+		let tokenTxn = await pass.checkTokenId()
+		assert.equal(tokenTxn.toNumber()-1, tokenId)
 	});
 });
