@@ -38,6 +38,18 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+/* Chrome, Safari, Edge, Opera */
+#bankroll-input::-webkit-outer-spin-button,
+#bankroll-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#bankroll-input {
+  -moz-appearance: textfield;
+}
+
 #arb-title {
   text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
 }

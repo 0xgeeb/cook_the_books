@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-slate-200 bottom-0 w-screen">
       <div className="flex flex-col w-5/6 mx-auto justify-center items-center py-8">
         <div className="flex flex-row items-center mb-6">
-          <h4 className="text-3xl font-rock">cook the books</h4>
+          <h4 className="text-3xl font-rock mr-4 lg:mr-2">cook the books</h4>
           <img className="h-12 w-12" src={logo}/>
         </div>
         <div className="flex flex-row items-center mx-auto">
@@ -45,6 +45,7 @@ export default function Footer() {
               ></path>
             </svg>
           </a>
+          <div className="mr-5"></div>
         </div>
       </div>
     </footer>

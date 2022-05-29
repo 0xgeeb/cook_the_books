@@ -1,7 +1,7 @@
 import React from "react";
 import logos from "../utils/logos.json"
 
-export default function NoArbCard(x) {
+export default function NoArbCard(x, bankroll) {
 
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -18,7 +18,7 @@ export default function NoArbCard(x) {
   }
 
   function lossAmount(homeLine, awayLine) {
-    let loss = formatter.format(-(1000 - ((1000 / homeLine) + (1000 / awayLine))));
+    let loss = formatter.format(-(bankroll - ((bankroll / homeLine) + (bankroll / awayLine))));
     return loss;
   }
 

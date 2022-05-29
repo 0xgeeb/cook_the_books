@@ -51,13 +51,14 @@ app.post('/minecraftspeedrun/db', async (req, res) => {
 });
 
 app.get('/minecraftspeedrun/bets', async (req, res) => {
-  try {
-    const response = await axios.get(`https://api.the-odds-api.com/v4/sports/${req.query.sport}/odds/?apiKey=${apiKey}&regions=us&markets=${req.query.bet}&oddsFormat=decimal`);
-    res.send(response.data);
-  }
-  catch (e) {
-    console.log('oopsies', e);
-  }
+  // try {
+  //   // const response = await axios.get(`https://api.the-odds-api.com/v4/sports/${req.query.sport}/odds/?apiKey=${apiKey}&regions=us&markets=${req.query.bet}&oddsFormat=decimal`);
+  //   const response = await axios.get(`https://api.the-odds-api.com/v4/sports/${req.query.sport}/odds/?apiKey=${}&regions=us&markets=${req.query.bet}&oddsFormat=decimal`);
+  //   res.send(response.data);
+  // }
+  // catch (e) {
+  res.send('error')
+  // }
 });
 
 app.get('/minecraftspeedrun/recent', async (req, res) => {

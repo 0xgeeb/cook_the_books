@@ -386,13 +386,13 @@
     {
         "team": "Brooklyn Nets",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/brooklyn_nets_f0cxsr.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/nba/brooklyn_nets_f0cxsr.png"
         }
     },
     {
         "team": "Charlotte Hornets",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/charlotte_hornets_gwolsi.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/nba/charlotte_hornets_gwolsi.png"
         }
     },
     {
@@ -410,145 +410,145 @@
     {
         "team": "Dallas Mavericks",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/dallas_mavericks_divavm.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/nba/dallas_mavericks_divavm.png"
         }
     },
     {
         "team": "Denver Nuggets",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/denver_nuggets_dmyqfj.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/nba/denver_nuggets_dmyqfj.png"
         }
     },
     {
         "team": "Detroit Pistons",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/detroit_pistons_cbatqt.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750888/logos/nba/detroit_pistons_cbatqt.png"
         }
     },
     {
         "team": "Golden State Warriors",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750889/logos/goldenstate_warriors_buezot.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750889/logos/nba/goldenstate_warriors_buezot.png"
         }
     },
     {
         "team": "Houston Rockets",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750889/logos/houston_rockets_tnxx0l.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652750889/logos/nba/houston_rockets_tnxx0l.png"
         }
     },
     {
         "team": "Indiana Pacers",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/indiana_pacers_c0ktfl.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/indiana_pacers_c0ktfl.png"
         }
     },
     {
         "team": "Los Angeles Clippers",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/losangeles_clippers_sryram.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/losangeles_clippers_sryram.png"
         }
     },
     {
         "team": "Los Angeles Lakers",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/losangeles_lakers_kldpwp.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/losangeles_lakers_kldpwp.png"
         }
     },
     {
         "team": "Memphis Grizzlies",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/memphis_grizzlies_rxpz4o.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/memphis_grizzlies_rxpz4o.png"
         }
     },
     {
         "team": "Miami Heat",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/miami_heat_cslixa.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/miami_heat_cslixa.png"
         }
     },
     {
         "team": "Milwaukee Bucks",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/milwaukee_bucks_nsxknr.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/milwaukee_bucks_nsxknr.png"
         }
     },
     {
         "team": "Minnesota Timberwolves",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/minnesota_timberwolves_ylupfi.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/minnesota_timberwolves_ylupfi.png"
         }
     },
     {
         "team": "New Orleans Pelicans",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/neworleans_pelicans_wyvkaj.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/neworleans_pelicans_wyvkaj.png"
         }
     },
     {
         "team": "New York Knicks",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/newyork_knicks_zwus7a.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/newyork_knicks_zwus7a.png"
         }
     },
     {
         "team": "Oklahoma City Thunder",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/oklahomacity_thunder_qx5yd4.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751375/logos/nba/oklahomacity_thunder_qx5yd4.png"
         }
     },
     {
         "team": "Orlando Magic",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/orlando_magic_dzefuw.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/orlando_magic_dzefuw.png"
         }
     },
     {
         "team": "Philadelphia 76ers",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/philadelphia_76ers_eqvmld.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/philadelphia_76ers_eqvmld.png"
         }
     },
     {
         "team": "Phoenix Suns",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/pheonix_suns_zjtpxa.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/pheonix_suns_zjtpxa.png"
         }
     },
     {
         "team": "Portland Trail Blazers",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/portland_trailblazers_wooe1y.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/portland_trailblazers_wooe1y.png"
         }
     },
     {
         "team": "Sacramento Kings",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/sacramento_kings_qtde9t.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/sacramento_kings_qtde9t.png"
         }
     },
     {
         "team": "San Antonio Spurs",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/sanantonio_spurs_n1f2rj.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/sanantonio_spurs_n1f2rj.png"
         }
     },
     {
         "team": "Toronto Raptors",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/toronto_raptors_ulqb4o.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751376/logos/nba/toronto_raptors_ulqb4o.png"
         }
     },
     {
         "team": "Utah Jazz",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751377/logos/utah_jazz_fzpmwu.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751377/logos/nba/utah_jazz_fzpmwu.png"
         }
     },
     {
         "team": "Washington Wizards",
         "info": {
-            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751377/logos/washington_wizards_bw21ep.png"
+            "url": "https://res.cloudinary.com/geeb/image/upload/w_100,h_100,c_limit/v1652751377/logos/nba/washington_wizards_bw21ep.png"
         }
     },
     {
