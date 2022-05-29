@@ -1,11 +1,13 @@
 import { React, useState } from "react";
 import { ethers } from "ethers";
-// import obj from "../utils/spreads.json";
+import obj from "../utils/spreads.json";
 // import obj from "../utils/decimal_ml_data.json";
 import logo from ".././images/colored_logo.png";
 import smoke2 from ".././images/flip_smoke.png";
+import odds_image from ".././images/odds_image.png";
 import Card from "../components/Card.jsx";
 import NoArbCard from "../components/NoArbCard.jsx";
+import NeedMetaMask from "../components/NeedMetaMask.jsx";
 import ArbNoSpreadCard from "../components/ArbNoSpreadCard.jsx";
 import AvaxLogo from ".././images/avax_logo.png";
 import CTBPassABI from "../utils/CTBPass.json";
@@ -88,14 +90,14 @@ export default function Test() {
   async function fetchOdds() {
     setLoading(current => !current)
     // const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
-    const response = await axios.get('/minecraftspeedrun/bets')
-    if(response.data = "error") {
-      setErrorAPI(true);
-    }
-    else {
-      // const obj = {...response.data}
-      // calcArbs(obj);
-    }
+    // console.log(response.data)
+    // if(response.data == "error") {
+    //   setErrorAPI(true);
+    // }
+    // else {
+    //   const obj = {...response.data}
+      calcArbs(obj);
+    // }
     setLoading(current => !current)
   };
   
@@ -220,18 +222,18 @@ export default function Test() {
       }
     }
   };
+  
+  function arbNoSpreadMap(object) {
+    if(!object.arb && !object.spread) {
+      return true
+    }
+  };
 
   function noArbNoSpread() {
     for(let i in odds) {
       if (!odds[i].arb && odds[i].spread) {
         return true
       }
-    }
-  };
-
-  function arbNoSpreadMap(object) {
-    if(!object.arb && !object.spread) {
-      return true
     }
   };
 
@@ -243,15 +245,7 @@ export default function Test() {
 
   function renderContent() {
     if(!MetaMaskOnboarding.isMetaMaskInstalled()) {
-      return  <div className="flex flex-col justify-center">
-                <div className="mx-auto">you will need to install MetaMask to mint the nft</div>
-                <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={mmInstance.startOnboarding}>
-                  <div className="flex flex-row items-center">
-                    <span>install metamask</span>
-                    <img className="ml-2" src={MetaMaskLogo} height="30" width="30" />
-                  </div>
-                </button>
-              </div>
+      return  NeedMetaMask();
     }
     else if(!currentAccount) {
       return  <div className="flex flex-col justify-center">
@@ -334,14 +328,39 @@ export default function Test() {
           </button>
         </a>
       </form>
-      {errorAPI && <p className="flex justify-center mx-auto w-5/6 mt-5 wrap">hello this is awkward but the arbitrage program seems to not be working. would you be so kind and reach out to me on discord or twitter so I can fix it. thanks!</p>}
+      {errorAPI && <div className="flex flex-col mx-auto justify-center w-5/6 mt-5 ">
+        <p className="mx-auto">this is awkward but my api key has seem to hit its limit</p>
+        <p className="mx-auto">could you let me know you are seeing this?</p>
+        <div className="flex flex-row justify-center items-center mt-3">
+          <p className="mr-10">@0xgeeb </p>
+          <a href="https://twitter.com/0xgeeb" rel="noopener noreferrer" target="_blank" className="">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fab"
+                data-icon="twitter"
+                className="svg-inline--fa fa-twitter w-4"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+              <path
+                fill="currentColor"
+                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+              ></path>
+              </svg>
+            </a>
+        </div>
+        <p className="mx-auto mt-3">0xgeeb#6249 on discord</p>
+        <p className="mx-auto mt-3">thanks!</p>
+        </div>}
     </div>
     }
   };
 
   return (
-    <div className="min-h-screen" style={{backgroundImage: `url(${smoke2})`}} id="background-div">
-      <div className="p-7 w-1/3 bg-[#F7F7F7] flex flex-col justify-center mt-48 mb-48 mx-auto rounded" id="card-div-shadow">
+    <div className="h-[2700px]" style={{backgroundImage: `url(${odds_image})`}} id="background-div">
+      <div className="p-7 w-5/6 lg:w-1/3 bg-[#F7F7F7] flex flex-col justify-center mt-48 mb-48 mx-auto rounded" id="card-div-shadow">
         {renderContent()}
       </div>
       <div className="flex justify-center">

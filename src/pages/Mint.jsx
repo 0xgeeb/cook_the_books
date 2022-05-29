@@ -3,11 +3,13 @@ import { ethers } from "ethers";
 import MetaMaskOnboarding from "@metamask/onboarding";
 import MetaMaskLogo from ".././images/metamasklogo.png";
 import smoke2 from ".././images/flip_smoke.png";
+import mint_image from ".././images/mint_image.png";
 import logo from ".././images/colored_logo.png";
 import AvaxLogo from ".././images/avax_logo.png";
-import CTBPassABI from "../utils/CTBPass.json";
 import Pass from ".././images/ctb_pass.png";
 import OGPass from ".././images/ctb_og_pass.png";
+import CTBPassABI from "../utils/CTBPass.json";
+import NeedMetaMask from "../components/NeedMetaMask.jsx";
 
 export default function Mint() {
 
@@ -29,8 +31,6 @@ export default function Mint() {
   };
 
   const CONTRACT_ADDRESS = "0x9BF4C0F67Ab65996E15889B493eCb23a9153e31a";
-
-  const mmInstance = new MetaMaskOnboarding();
 
   async function connectWallet() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -81,6 +81,8 @@ export default function Mint() {
       try {
         const mintTxn = await passContract.mintThePass();
         await mintTxn.wait();
+        const checkIdTxn = await passContract.checkTokenId();
+        setCurrentId(parseInt(checkIdTxn._hex, 16) - 1);
         setLoading(current => !current);
       }
       catch {
@@ -91,15 +93,7 @@ export default function Mint() {
 
   function renderContent() {
     if(!MetaMaskOnboarding.isMetaMaskInstalled()) {
-      return  <div className="flex flex-col justify-center">
-                <div className="mx-auto">you will need to install MetaMask to mint the nft</div>
-                <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={mmInstance.startOnboarding}>
-                  <div className="flex flex-row items-center">
-                    <span>install metamask</span>
-                    <img className="ml-2" src={MetaMaskLogo} height="30" width="30" />
-                  </div>
-                </button>
-              </div>
+      return NeedMetaMask();
     }
     else if(!currentAccount) {
       return  <div className="flex flex-col justify-center">
@@ -126,8 +120,9 @@ export default function Mint() {
     else {
       return  <div className="flex flex-col justify-center" >
                 <div className="mx-auto">{currentId} / 10,000 CTB Passes have been minted</div>
-                {currentId < 1000 && <div className="mx-auto">{1000 - currentId} OG Passes are available to be minted</div>}
-                {currentId >= 1000 && <div className="mx-auto">sorry there are no more OG passes left</div>}
+                {currentId < 500 && <div className="mx-auto">{500 - currentId} OG Passes are available to be minted</div>}
+                {currentId >= 500 && <div className="mx-auto">sorry there are no more OG passes left</div>}
+                {currentId >= 10000 && <div className="mx-auto">sorry there are no passes left</div>}
                 <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={interactMintFunction}>
                   <div className="flex flex-row items-center">
                     <span className="">mint pass</span>
@@ -139,19 +134,27 @@ export default function Mint() {
   }
   
   return (
-    <div className="min-h-screen mb-10" style={{backgroundImage: `url(${smoke2})`}} id="background-div">
-      <div className="p-7 w-1/4 bg-[#F7F7F7] flex flex-col justify-center mt-48 mx-auto rounded" id="card-div-shadow">
+    <div className="min-h-screen" style={{backgroundImage: `url(${mint_image})`}} id="background-div">
+      <div className="p-7 w-5/6 lg:w-1/4 bg-[#F7F7F7] flex flex-col justify-center mt-36 mx-auto rounded" id="card-div-shadow">
         <h1 className="mx-auto text-2xl font-bold text-cyan-400 mb-8">Mint your CTB Pass</h1>
         {renderContent()}
       </div>
       <div className="flex justify-center mt-6">
         {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       </div>
-      <div className="w-5/6 mx-auto mt-[600px] mb-24 flex flex-col">
-        <h1 className="text-3xl mx-auto font-bold mb-5" id="arb-title">Mint one of the NFTs to gain access to CTB</h1>
+      <div className="w-5/6 mx-auto mt-72 lg:mt-12 flex flex-col justify-center">
+        <h1 className="text-2xl mx-auto font-bold mb-5 " id="arb-title">10,000 CTB Passes</h1>
         <div className="flex flex-row justify-center">
-          <img className="h-[490px] mr-48" src={OGPass} />
-          <img className="h-[490px]" src={Pass} />
+          <div className="flex flex-col">
+            <div className="flex flex-col justify-center mr-12">
+              <img className="h-[300px]" src={OGPass} />
+              <h1 className="text-xl font-bold text-white mx-auto" id="arb-title">500 OG Passes</h1>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <img className="h-[300px]" src={Pass} />
+            <h1 className="text-xl font-bold text-white mx-auto" id="arb-title">9,500 Passes</h1>
+          </div>
         </div>
       </div>
     </div>

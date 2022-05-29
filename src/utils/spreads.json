@@ -105,12 +105,12 @@
                   "outcomes":[
                      {
                         "name":"Brooklyn Nets",
-                        "price":1.95,
+                        "price":2,
                         "point":-8.5
                      },
                      {
                         "name":"Cleveland Cavaliers",
-                        "price":1.87,
+                        "price":2.05,
                         "point":8.5
                      }
                   ]
