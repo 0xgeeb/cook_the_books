@@ -17,6 +17,7 @@ export default function Mint() {
   const [avaxChain, setAvaxChain] = useState(null);
   const [loading, setLoading] = useState(false);
   const [currentId, setCurrentId] = useState(null);
+  const [oneAvaxCheck, setOneAvaxCheck] = useState(false);
 
   const AVALANCHE_TESTNET_PARAMS = {
     chainId: '0xA869',
@@ -123,6 +124,7 @@ export default function Mint() {
                 {currentId < 500 && <div className="mx-auto">{500 - currentId} OG Passes are available to be minted</div>}
                 {currentId >= 500 && <div className="mx-auto">sorry there are no more OG passes left</div>}
                 {currentId >= 10000 && <div className="mx-auto">sorry there are no passes left</div>}
+                {}
                 <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={interactMintFunction}>
                   <div className="flex flex-row items-center">
                     <span className="">mint pass</span>
@@ -142,17 +144,17 @@ export default function Mint() {
       <div className="flex justify-center mt-6">
         {loading && <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       </div>
-      <div className="w-5/6 mx-auto mt-72 lg:mt-12 flex flex-col justify-center">
-        <h1 className="text-2xl mx-auto font-bold mb-5 " id="arb-title">10,000 CTB Passes</h1>
+      <div className="w-5/6 mx-auto mt-72 lg:mt-12 flex flex-col justify-center mb-12">
+        <h1 className="text-2xl mx-auto font-bold mb-5 border-b-2 border-gray-200" id="arb-title">10,000 CTB Passes</h1>
         <div className="flex flex-row justify-center">
           <div className="flex flex-col">
             <div className="flex flex-col justify-center mr-12">
-              <img className="h-[300px]" src={OGPass} />
+              <img className="h-[300px]" src={OGPass} id="card-div-shadow"/>
               <h1 className="text-xl font-bold text-white mx-auto" id="arb-title">500 OG Passes</h1>
             </div>
           </div>
           <div className="flex flex-col">
-            <img className="h-[300px]" src={Pass} />
+            <img className="h-[300px]" src={Pass} id="card-div-shadow"/>
             <h1 className="text-xl font-bold text-white mx-auto" id="arb-title">9,500 Passes</h1>
           </div>
         </div>

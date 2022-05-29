@@ -3,14 +3,14 @@ import colored_logo from ".././images/colored_logo.png"
 
 export default function About() {
   return (
-    <div className="flex flex-col justify-center w-1/3 mx-auto mt-36">
+    <div className="flex flex-col justify-center w-4/6 lg:w-1/3 mx-auto mt-36">
       <div className="flex flex-col justify-start mb-12">
         <div className="flex flex-row items-end">
           <h1 className="font-bold text-2xl mr-2">What is Cook the Books?</h1>
           <img src={colored_logo} height="40" width="40"/>
         </div>
         <p className="mt-2">
-          Cook the Books is a web3 application that provides sport betting arbitrage opportunities for its users. Users must mint the NFT or "CTB Pass" in order to use the application. A portion of the passes can be minted for free while the rest cost 1 $AVAX.
+          Cook the Books is a dapp on the Avalanche network that provides sport betting arbitrage opportunities. Users must mint the NFT or "CTB Pass" to use the application. A portion of the passes can be minted for free while the rest cost 1 $AVAX.
         </p>
       </div>
       <div className="flex flex-col justify-start mb-12">

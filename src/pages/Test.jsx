@@ -285,7 +285,7 @@ export default function Test() {
     }
     else {
       return  <div className="flex flex-col justify-center">
-      <h1 className="mx-auto text-2xl font-bold text-cyan-400 mb-8">Select a Sport and Type of Bet</h1>
+      <h1 className="mx-auto text-2xl font-bold text-black mb-8 border-b-2 border-cyan-400" id="arb-title">Select a Sport and Type of Bet</h1>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-row justify-around ml-0">
           <span>sport (NBA, MLB, or NHL)</span>
