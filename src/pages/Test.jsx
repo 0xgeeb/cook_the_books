@@ -3,7 +3,6 @@ import { ethers } from "ethers";
 import obj from "../utils/spreads.json";
 // import obj from "../utils/decimal_ml_data.json";
 import logo from ".././images/colored_logo.png";
-import smoke2 from ".././images/flip_smoke.png";
 import odds_image from ".././images/odds_image.png";
 import Card from "../components/Card.jsx";
 import NoArbCard from "../components/NoArbCard.jsx";
@@ -92,7 +91,7 @@ export default function Test() {
     // const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
     // console.log(response.data)
     // if(response.data == "error") {
-    //   setErrorAPI(true);
+      // setErrorAPI(true);
     // }
     // else {
     //   const obj = {...response.data}

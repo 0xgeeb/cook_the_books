@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react"
-import colored_logo from ".././images/colored_logo.png"
+import logo from ".././images/colored_logo.png"
 import home_image from ".././images/home_image.png";
 import HomeCard from "../components/HomeCard.jsx";
 import Pass from ".././images/ctb_pass.png";
@@ -28,7 +28,7 @@ export default function Home() {
                     <a href="/odds"><button className="ml-1 mr-4 py-1 px-3 mt-6 lg:mt-4 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button">
                         <div className="flex flex-row">
                             <span className="mt-1">Start Cooking</span>
-                            <img className="ml-2" src={colored_logo} height="30" width="30" />
+                            <img className="ml-2" src={logo} height="30" width="30" />
                         </div>
                         </button>
                     </a>

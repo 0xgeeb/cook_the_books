@@ -75,6 +75,7 @@ export default function Mint() {
         setLoading(current => !current);
       }
       catch {
+        setOneAvaxCheck(current => !current);
         setLoading(current => !current);
       }
     }
@@ -124,7 +125,8 @@ export default function Mint() {
                 {currentId < 500 && <div className="mx-auto">{500 - currentId} OG Passes are available to be minted</div>}
                 {currentId >= 500 && <div className="mx-auto">sorry there are no more OG passes left</div>}
                 {currentId >= 10000 && <div className="mx-auto">sorry there are no passes left</div>}
-                {}
+                {/* MAKE THE BELOW TRUE AVAXCHECK AND DO U HAVE ENOUGH AVAX? */}
+                {oneAvaxCheck && <div className="mx-auto">do you have 1 $AVAX?</div>}
                 <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={interactMintFunction}>
                   <div className="flex flex-row items-center">
                     <span className="">mint pass</span>
