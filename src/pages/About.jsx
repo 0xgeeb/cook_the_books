@@ -37,7 +37,7 @@ export default function About() {
           <div className="flex flex-col justify-start mb-12">
             <h1 className="font-bold text-2xl">Contract Address?</h1>
             <p className="mt-2">
-            <b>CTB Pass Contract Address:</b> random address
+            <b>CTB Pass Contract Address:</b> 0x4827Ad9D1a06335BA56A035765ec2213170D4Ec8
             </p>
           </div>
           <div className="flex flex-col justify-start mb-12">
