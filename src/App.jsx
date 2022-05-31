@@ -7,7 +7,6 @@ import Home from "./pages/Home.jsx"
 import Odds from "./pages/Odds.jsx"
 import Mint from "./pages/Mint.jsx"
 import About from "./pages/About.jsx"
-import Test from "./pages/Test.jsx";
 import Lost from "./pages/Lost.jsx";
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
                     <Route path="/odds" element={<Odds />} />
                     <Route path="/mint" element={<Mint />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/test" element={<Test />} />
                     <Route path="/lost" element={<Lost />} />
                     <Route path="*" element={<Navigate to="/lost" />} />
                 </Routes>

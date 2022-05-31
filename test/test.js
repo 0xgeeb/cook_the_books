@@ -23,7 +23,7 @@ describe("CTBPass", async () => {
 
   it('should have a name', async () => {
     const name = await pass.name()
-    assert.equal(name, 'Cook the Books Pass - test5')
+    assert.equal(name, 'Cook the Books Pass')
   });
 
 	it('should be able to mint 2 og passes', async () => {

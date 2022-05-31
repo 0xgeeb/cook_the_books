@@ -1148,20 +1148,20 @@ contract CTBPass is ERC721URIStorage, Ownable {
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
-  uint256 public constant MINT_LIMIT = 10;
-  uint256 public constant OG_LIMIT = 2;
+  uint256 public constant MINT_LIMIT = 10000;
+  uint256 public constant OG_LIMIT = 500;
 
   mapping(address => uint256) public nftHolders;
 
   event NewPassMinted(address sender, uint256 tokenId);
 
-  constructor() ERC721 ("Cook the Books Pass - test5", "CTBP") {
+  constructor() ERC721 ("Cook the Books Pass", "CTBP") {
     _tokenIds.increment();
   }
 
   function mintThePass() public payable {
     uint256 newTokenId = _tokenIds.current();
-    require(newTokenId <= MINT_LIMIT, "passes are sold out sorry bro");
+    require(newTokenId <= MINT_LIMIT, "passes are sold out sorry");
     if (newTokenId <= OG_LIMIT) {
       _ogPassMint(newTokenId);
     }
@@ -1176,17 +1176,17 @@ contract CTBPass is ERC721URIStorage, Ownable {
 
   function _ogPassMint(uint256 tokenId_) private {
     _safeMint(msg.sender, tokenId_);
-    string memory ipfsJson = "ipfs://bafkreihjyhcqfz3544kjem55el3fa3whtfhoagl5ehcb564emsd3ocdy7q";
+    string memory ipfsJson = "ipfs://bafkreigt7webhu56jed643eehkl4rsrl5fye2niivtblijzg23e3lu3pc4";
     _setTokenURI(tokenId_, ipfsJson);
   }
 
   function _passMint(uint256 tokenId_) private {
     _safeMint(msg.sender, tokenId_);
-    string memory ipfsJson = "ipfs://bafkreia2pzmjzezcigtq6hlbnrm4qtoh7z4ulfrttelqufsadlt2vwhqw4";
+    string memory ipfsJson = "ipfs://bafkreiavbmigjgxtom4tg6lllv2ustxmwd4xd6x5dpkiwe6lbbn75irs7i";
     _setTokenURI(tokenId_, ipfsJson);
   }
 
-  function checkMembershipStatus() public view returns (uint8)  {
+  function checkMembershipStatus() public view returns (uint256)  {
     uint256 userTokenId = nftHolders[msg.sender];
     if (userTokenId > 0) {
       return 1;

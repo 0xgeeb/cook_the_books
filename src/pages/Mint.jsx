@@ -31,7 +31,7 @@ export default function Mint() {
     blockExplorerUrls: ['https://testnet.snowtrace.io/']
   };
 
-  const CONTRACT_ADDRESS = "0x9BF4C0F67Ab65996E15889B493eCb23a9153e31a";
+  const CONTRACT_ADDRESS = "0x64213Ac8a60A51b29FC392381e8ab4Da0Ad5Bf6e";
 
   async function connectWallet() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });

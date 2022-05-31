@@ -28,12 +28,12 @@ module.exports = {
       url: process.env.ALCHEMY_API_KEY_URL,
       accounts: [process.env.RINKEBY_PRIVATE_KEY]
     },
-    // mainnet: {
-    //   url: 'https://api.avax.network/ext/bc/C/rpc',
-    //   gasPrice: 225000000000,
-    //   chainId: 43114,
-    //   accounts: [process.env.FUJI_PRIVATE_KEY]
-    // },
+    mainnet: {
+      url: 'https://api.avax.network/ext/bc/C/rpc',
+      gasPrice: 225000000000,
+      chainId: 43114,
+      accounts: [process.env.FUJI_PRIVATE_KEY]
+    },
   },
   gasReporter: {
     token: 'AVAX',

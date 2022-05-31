@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { ethers } from "ethers";
-import obj from "../utils/spreads.json";
+// import obj from "../utils/spreads.json";
 // import obj from "../utils/decimal_ml_data.json";
 import logo from ".././images/colored_logo.png";
 import odds_image from ".././images/odds_image.png";
@@ -41,7 +41,7 @@ export default function Odds() {
     blockExplorerUrls: ['https://testnet.snowtrace.io/']
   };
 
-  const CONTRACT_ADDRESS = "0x9BF4C0F67Ab65996E15889B493eCb23a9153e31a";
+  const CONTRACT_ADDRESS = "0x64213Ac8a60A51b29FC392381e8ab4Da0Ad5Bf6e";
   
   async function connectWallet() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -88,15 +88,14 @@ export default function Odds() {
   
   async function fetchOdds() {
     setLoading(current => !current)
-    // const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
-    // console.log(response.data)
-    // if(response.data == "error") {
-      // setErrorAPI(true);
-    // }
-    // else {
-    //   const obj = {...response.data}
+    const response = await axios.get(`/minecraftspeedrun/bets/?sport=${sport}&bet=${bet}`);
+    if(response.data == "error") {
+      setErrorAPI(true);
+    }
+    else {
+      const obj = {...response.data}
       calcArbs(obj);
-    // }
+    }
     setLoading(current => !current)
   };
   
@@ -147,6 +146,9 @@ export default function Odds() {
         homeOddsArray.push(homeObject)
         awayOddsArray.push(awayObject)
       }
+      if(homeOddsArray.length === 0) {
+        continue
+      }
       const opp = homeOddsArray.reduce(function (prev, current) {
         return (prev.line > current.line) ? prev : current
       })
@@ -183,9 +185,9 @@ export default function Odds() {
       // for testing purposes
       // console.log(arb)
       allGames.push(gameObject)
-      // if (profitPercentage(gameObject.home.line, gameObject.away.line) > 20) {
-      //   uploadToDB(gameObject);
-      // }
+      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 70) {
+        uploadToDB(gameObject);
+      }
     }
     // for testing purposes
     // console.log(allGames)

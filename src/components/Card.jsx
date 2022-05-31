@@ -31,11 +31,11 @@ export default function Card(x, bankroll) {
       <h2 className="mx-auto text-2xl mt-5 border-b-2 border-gray-200 text-green-500"><b>{profitPercentage(x.home.line, x.away.line)}%</b> return</h2>
       <div className="mx-auto h-32 w-5/6 flex flex-row justify-between items-center mb-5">
         <img src={getLogo(x.home.name)} />
-        <p className="ml-10 w-[300px]">bet <b>{formatter.format(bankroll / x.home.line)}</b> on the {x.home.name} on {x.home.book} for <b>{x.home.line}</b></p>
+        <p className="ml-10 w-[300px]">bet <b>{formatter.format(bankroll / x.home.line)}</b> on the {x.home.name} <b>{x.home.spread && ( x.home.spread )}</b> on {x.home.book} for <b>{x.home.line}</b></p>
       </div>
       <div className="mx-auto h-32 w-5/6 flex flex-row justify-between items-center border-t-2 border-gray-200">
         <img src={getLogo(x.away.name)} />
-        <p className="ml-10 w-[300px]">bet <b>{formatter.format(bankroll / x.away.line)}</b> on the {x.away.name} on {x.away.book} for <b>{x.away.line}</b></p>
+        <p className="ml-10 w-[300px]">bet <b>{formatter.format(bankroll / x.away.line)}</b> on the {x.away.name} <b>{x.away.spread && ( x.away.spread )}</b> on {x.away.book} for <b>{x.away.line}</b></p>
       </div>
       <h2 className="mx-auto text-lg mt-2 mb-5 border-b-2 border-gray-200"><b>{profitAmount(x.home.line, x.away.line)}</b> profit on a total bet of <b>{formatter.format((bankroll / x.home.line) + (bankroll / x.away.line))}</b></h2>
     </div>
