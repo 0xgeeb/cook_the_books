@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react"
-import logo from ".././images/colored_logo.png"
+import logo from ".././images/ctb_logo.png"
 import home_image from ".././images/home_image.png";
 import HomeCard from "../components/HomeCard.jsx";
 import Pass from ".././images/ctb_pass.png";

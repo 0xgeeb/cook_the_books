@@ -1,6 +1,6 @@
 import React from "react";
 import about_image from ".././images/about_image.png";
-import logo from ".././images/colored_logo.png"
+import logo from ".././images/ctb_logo.png"
 
 export default function About() {
   return (

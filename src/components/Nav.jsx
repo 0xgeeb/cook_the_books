@@ -1,5 +1,5 @@
 import React from "react"
-import colored_logo from ".././images/colored_logo.png"
+import colored_logo from ".././images/ctb_logo.png"
 
 export default function Nav() {
     return (

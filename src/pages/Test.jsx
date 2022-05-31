@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { ethers } from "ethers";
 import obj from "../utils/spreads.json";
 // import obj from "../utils/decimal_ml_data.json";
-import logo from ".././images/colored_logo.png";
+import logo from ".././images/ctb_logo.png";
 import odds_image from ".././images/odds_image.png";
 import Card from "../components/Card.jsx";
 import NoArbCard from "../components/NoArbCard.jsx";

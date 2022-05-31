@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { ethers } from "ethers";
 // import obj from "../utils/spreads.json";
 // import obj from "../utils/decimal_ml_data.json";
-import logo from ".././images/colored_logo.png";
+import logo from ".././images/ctb_logo.png";
 import odds_image from ".././images/odds_image.png";
 import Card from "../components/Card.jsx";
 import NoArbCard from "../components/NoArbCard.jsx";
@@ -29,19 +29,19 @@ export default function Odds() {
   const [sportError, setSportError] = useState(false);
   const [betError, setBetError] = useState(false);
 
-  const AVALANCHE_TESTNET_PARAMS = {
-    chainId: '0xA869',
-    chainName: 'Avalanche Testnet C-Chain',
+  const AVALANCHE_MAINNET_PARAMS = {
+    chainId: '0xA86A',
+    chainName: 'Avalanche Mainnet C-Chain',
     nativeCurrency: {
       name: 'Avalanche',
       symbol: 'AVAX',
       decimals: 18
     },
-    rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
-    blockExplorerUrls: ['https://testnet.snowtrace.io/']
-  };
+    rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+    blockExplorerUrls: ['https://snowtrace.io/']
+  }
 
-  const CONTRACT_ADDRESS = "0x64213Ac8a60A51b29FC392381e8ab4Da0Ad5Bf6e";
+  const CONTRACT_ADDRESS = "0x4827Ad9D1a06335BA56A035765ec2213170D4Ec8";
   
   async function connectWallet() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -50,10 +50,10 @@ export default function Odds() {
   };
   
   async function switchToAvalancheChain() {
-    await window.ethereum.request({ method: 'wallet_addEthereumChain', params: [AVALANCHE_TESTNET_PARAMS] });
+    await window.ethereum.request({ method: 'wallet_addEthereumChain', params: [AVALANCHE_MAINNET_PARAMS] });
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const { chainId } = await provider.getNetwork();
-    if (chainId === 43113) {
+    if (chainId === 43114) {
       setAvaxChain(chainId);
     }
     const membershipProvider = new ethers.providers.Web3Provider(ethereum);
@@ -185,7 +185,7 @@ export default function Odds() {
       // for testing purposes
       // console.log(arb)
       allGames.push(gameObject)
-      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 70) {
+      if (profitPercentage(gameObject.home.line, gameObject.away.line) > 25) {
         uploadToDB(gameObject);
       }
     }

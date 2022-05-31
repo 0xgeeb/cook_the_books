@@ -2,9 +2,8 @@ import { React, useState } from "react";
 import { ethers } from "ethers";
 import MetaMaskOnboarding from "@metamask/onboarding";
 import MetaMaskLogo from ".././images/metamasklogo.png";
-import smoke2 from ".././images/flip_smoke.png";
 import mint_image from ".././images/mint_image.png";
-import logo from ".././images/colored_logo.png";
+import logo from ".././images/ctb_logo.png";
 import AvaxLogo from ".././images/avax_logo.png";
 import Pass from ".././images/ctb_pass.png";
 import OGPass from ".././images/ctb_og_pass.png";
@@ -15,23 +14,23 @@ export default function Mint() {
 
   const [currentAccount, setCurrentAccount] = useState(null);
   const [avaxChain, setAvaxChain] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [currentId, setCurrentId] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [oneAvaxCheck, setOneAvaxCheck] = useState(false);
 
-  const AVALANCHE_TESTNET_PARAMS = {
-    chainId: '0xA869',
-    chainName: 'Avalanche Testnet C-Chain',
+  const AVALANCHE_MAINNET_PARAMS = {
+    chainId: '0xA86A',
+    chainName: 'Avalanche Mainnet C-Chain',
     nativeCurrency: {
       name: 'Avalanche',
       symbol: 'AVAX',
       decimals: 18
     },
-    rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
-    blockExplorerUrls: ['https://testnet.snowtrace.io/']
-  };
+    rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+    blockExplorerUrls: ['https://snowtrace.io/']
+  }
 
-  const CONTRACT_ADDRESS = "0x64213Ac8a60A51b29FC392381e8ab4Da0Ad5Bf6e";
+  const CONTRACT_ADDRESS = "0x4827Ad9D1a06335BA56A035765ec2213170D4Ec8";
 
   async function connectWallet() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -40,10 +39,10 @@ export default function Mint() {
   };
   
   async function switchToAvalancheChain() {
-    await window.ethereum.request({ method: 'wallet_addEthereumChain', params: [AVALANCHE_TESTNET_PARAMS] });
+    await window.ethereum.request({ method: 'wallet_addEthereumChain', params: [AVALANCHE_MAINNET_PARAMS] });
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const { chainId } = await provider.getNetwork();
-    if (chainId === 43113) {
+    if (chainId === 43114) {
       setAvaxChain(chainId);
     };
     const signer = provider.getSigner();
@@ -65,7 +64,7 @@ export default function Mint() {
       signer
     );
     setLoading(current => !current);
-    if (currentId >= 2) {
+    if (currentId >= 500) {
       let overrides = {
         value: ethers.utils.parseEther((1).toString())
       };
@@ -125,7 +124,6 @@ export default function Mint() {
                 {currentId < 500 && <div className="mx-auto">{500 - currentId} OG Passes are available to be minted</div>}
                 {currentId >= 500 && <div className="mx-auto">sorry there are no more OG passes left</div>}
                 {currentId >= 10000 && <div className="mx-auto">sorry there are no passes left</div>}
-                {/* MAKE THE BELOW TRUE AVAXCHECK AND DO U HAVE ENOUGH AVAX? */}
                 {oneAvaxCheck && <div className="mx-auto">do you have 1 $AVAX?</div>}
                 <button className="mx-auto py-1 px-3 mt-8 whitespace-nowrap bg-white hover:text-white hover:bg-black rounded-lg" id="home-button" onClick={interactMintFunction}>
                   <div className="flex flex-row items-center">
