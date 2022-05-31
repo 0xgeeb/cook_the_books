@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.11be9631.css",
+    "main.js": "/static/js/main.b599aff4.js",
+    "static/media/odds_image.png": "/static/media/odds_image.62257dcb79478999f007.png",
+    "static/media/home_image.png": "/static/media/home_image.ad939f516e83c92fa4a1.png",
+    "static/media/lost_image.jpg": "/static/media/lost_image.8b7ba8d11c1ab2beb40f.jpg",
+    "static/media/mint_image.png": "/static/media/mint_image.773ac8cc6537990e0bd1.png",
+    "static/media/metamasklogo.png": "/static/media/metamasklogo.4f06ed22a21c26d9a0ce.png",
+    "static/media/about_image.png": "/static/media/about_image.9899d3324bac8aef4265.png",
+    "static/media/ctb_og_pass.png": "/static/media/ctb_og_pass.d0e6c3ab1183703cb178.png",
+    "static/media/ctb_pass.png": "/static/media/ctb_pass.bfdea4bd4e59388ffb0a.png",
+    "static/media/avax_logo.png": "/static/media/avax_logo.1b4e11e2eb3c43be0633.png",
+    "static/media/ctb_logo.png": "/static/media/ctb_logo.e2ecd668f6376679d2a6.png",
+    "index.html": "/index.html",
+    "main.11be9631.css.map": "/static/css/main.11be9631.css.map",
+    "main.b599aff4.js.map": "/static/js/main.b599aff4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11be9631.css",
+    "static/js/main.b599aff4.js"
+  ]
+}
