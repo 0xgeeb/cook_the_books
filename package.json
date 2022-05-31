@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "buildwebpack": "webpack",
-    "start": "webpack-dev-server",
+    "start": "npm run build && NODE_ENV=production npm run server",
     "development": "NODE_ENV=development concurrently --kill-others \"npm run client\" \"npm run server\"",
     "production": "npm run build && NODE_ENV=production npm run server",
     "client": "react-scripts start",
